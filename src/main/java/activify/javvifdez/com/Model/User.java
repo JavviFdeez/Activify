@@ -1,4 +1,4 @@
-package com.Model;
+package activify.javvifdez.com.Model;
 
 import javax.persistence.*;
 import java.util.List;
