@@ -1,4 +1,0 @@
-package activify.javvifdez.com.Model;
-
-public class ActivifyApp {
-}

@@ -29,12 +29,6 @@ public class SportActivity {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "description")
-    private String description;
-
-    @Column(name = "activity_type")
-    private String activityType;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -44,15 +38,13 @@ public class SportActivity {
 
     // Constructor con parámetros
     public SportActivity(double distance, int duration, int elevation, String sport, Date activityDate,
-                         String title, String description, String activityType, User user) {
+                         String title, User user) {
         this.distance = distance;
         this.duration = duration;
         this.elevation = elevation;
         this.sport = sport;
         this.activityDate = activityDate;
         this.title = title;
-        this.description = description;
-        this.activityType = activityType;
         this.user = user;
     }
 
@@ -113,22 +105,6 @@ public class SportActivity {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getActivityType() {
-        return activityType;
-    }
-
-    public void setActivityType(String activityType) {
-        this.activityType = activityType;
-    }
-
     public User getUser() {
         return user;
     }
@@ -137,5 +113,4 @@ public class SportActivity {
         this.user = user;
     }
 
-    // Métodos adicionales según sea necesario
 }
