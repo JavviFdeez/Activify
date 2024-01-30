@@ -10,9 +10,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="610.0" layoutX="-9.0">
+      <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
-            <Image url="@../../../../../../../Desktop/ESCRITORIO/DAM/Acceso_a_Datos/Activify/FondoLogin.png" />
+            <Image url="@Images/FondoLogin.png" />
          </image>
       </ImageView>
       <Pane layoutX="157.0" layoutY="41.0" prefHeight="318.0" prefWidth="286.0" style="-fx-background-color: rgba(255,255,255,0.8);">
@@ -22,16 +22,16 @@
             <Button id="ButtonLogIn" layoutX="42.0" layoutY="252.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-background-radius: 3; -fx-background-color: #fc5200;" text="Iniciar Sesión" textFill="WHITE" />
             <TextArea id="TextAreaUser" layoutX="42.0" layoutY="124.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #F0F0F0;" />
             <TextArea id="TextAreaPassword" layoutX="42.0" layoutY="189.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #F0F0F0;" />
-            <ImageView id="LogoActivify" fitHeight="227.0" fitWidth="202.0" layoutX="42.0" layoutY="-65.0">
-               <image>
-                  <Image url="@../../../../../../../Desktop/ESCRITORIO/DAM/Acceso_a_Datos/Activify/LogoActivify.png" />
-               </image>
-            </ImageView>
             <Label layoutX="42.0" layoutY="62.0" text="Crear Cuenta" textAlignment="CENTER">
                <font>
                   <Font name="Ebrima" size="30.0" />
                </font>
             </Label>
+            <ImageView fitHeight="233.0" fitWidth="195.0" layoutX="45.0" layoutY="-74.0">
+               <image>
+                  <Image url="@Images/LogoActivify.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

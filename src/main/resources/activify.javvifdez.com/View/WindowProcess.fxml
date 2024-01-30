@@ -11,12 +11,12 @@
    <children>
       <ImageView id="IconPhoto" fitHeight="54.0" fitWidth="51.0" layoutX="541.0" layoutY="8.0">
          <image>
-            <Image url="@../../../../../../../Desktop/ESCRITORIO/DAM/Acceso_a_Datos/Activify/user_icon.png" />
+            <Image url="@/activify.javvifdez.com/View/Images/user_icon.png" />
          </image>
       </ImageView>
       <ImageView id="LogoActivify" fitHeight="209.0" fitWidth="149.0" layoutY="-63.0">
          <image>
-            <Image url="@../../../../../../../Desktop/ESCRITORIO/DAM/Acceso_a_Datos/Activify/LogoActivify.png" />
+            <Image url="@/activify.javvifdez.com/View/Images/LogoActivify.png" />
          </image>
       </ImageView>
       <Text id="TextActividades" fill="#5e5e5e" layoutX="401.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actividades">
@@ -36,5 +36,10 @@
             <Font name="Malgun Gothic Semilight" size="20.0" />
          </font>
       </Text>
+      <ImageView fitHeight="233.0" fitWidth="195.0" layoutY="-68.0">
+         <image>
+            <Image url="@Images/LogoActivify.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

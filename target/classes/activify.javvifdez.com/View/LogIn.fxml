@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.javvifdez.com.Controller.LogInController">>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="activify.javvifdez.com.Controller.LogInController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="610.0" layoutX="-9.0">
+      <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
-            <Image url="@FondoLogin.png" />
+            <Image url="@Images/FondoLogin.png" />
          </image>
       </ImageView>
       <Pane layoutX="157.0" layoutY="41.0" prefHeight="318.0" prefWidth="286.0" style="-fx-background-color: rgba(255,255,255,0.8);">
@@ -27,12 +27,17 @@
             </Label>
             <TextArea id="TextAreaUser" layoutX="42.0" layoutY="83.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #F0F0F0;" />
             <TextArea id="TextAreaPassword" layoutX="42.0" layoutY="148.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #F0F0F0;" />
-            <ImageView id="LogoActivify" fitHeight="227.0" fitWidth="202.0" layoutX="42.0" layoutY="-60.0">
+            <ImageView id="LogoActivify" fitHeight="309.0" fitWidth="309.0" layoutX="42.0" layoutY="-60.0">
                <image>
-                  <Image url="@LogoActivify.png" />
+                  <Image url="@/activify.javvifdez.com/View/Images/LogoActivify.png" />
                </image>
             </ImageView>
             <Button id="ButtonRegister" layoutX="188.0" layoutY="263.0" mnemonicParsing="false" style="-fx-background-color: #fc5200;" text="Resgistrarte" textFill="WHITE" />
+            <ImageView fitHeight="233.0" fitWidth="195.0" layoutX="46.0" layoutY="-74.0">
+               <image>
+                  <Image url="@Images/LogoActivify.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>
