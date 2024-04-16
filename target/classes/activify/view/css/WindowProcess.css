@@ -1,0 +1,31 @@
+/* Estilos para el fondo de la ventana */
+#rootPane {
+    -fx-background-color: #f0f0f0; /* Color de fondo */
+}
+
+/* Estilos para el texto de las secciones */
+#TextActividades, #TextTu, #TextProgreso {
+    -fx-fill: #5e5e5e; /* Color del texto */
+    -fx-font-size: 20px; /* Tamaño de fuente */
+    -fx-font-family: "Malgun Gothic Semilight"; /* Fuente */
+}
+
+/* Estilos para las líneas divisorias */
+#LineActivity {
+    -fx-stroke: #5e5e5e; /* Color de la línea */
+}
+
+/* Estilos para el logo de Activify */
+#LogoActivify {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0); /* Sombra */
+}
+
+/* Estilos para el icono de usuario */
+#IconPhoto {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0); /* Sombra */
+}
+
+/* Estilos para el logo de Activify en la parte inferior */
+#ImageView {
+    -fx-alignment: center; /* Alineación */
+}

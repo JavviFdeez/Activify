@@ -1,0 +1,18 @@
+/* Estilos para el layout general */
+#rootPane {
+    -fx-background-color: #f0f0f0;
+}
+
+/* Estilos para los elementos específicos */
+#TextActividades {
+    -fx-fill: #5e5e5e;
+}
+
+#LineActivity {
+    -fx-stroke: #5e5e5e;
+}
+
+#ButtonCanceled {
+    -fx-background-color: #fc5200;
+    -fx-text-fill: white;
+}

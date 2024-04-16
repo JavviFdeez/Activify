@@ -1,0 +1,15 @@
+activify\repo\UserRepository.class
+activify\ActivifyApp.class
+activify\model\HibernateUtil.class
+activify\controller\LoginController.class
+activify\controller\CreateAccountController.class
+activify\controller\WindowProcessController.class
+activify\config\EntityManagerFactoryProvider.class
+activify\model\Activity.class
+activify\controller\AddActivitiesController.class
+activify\service\SomeService.class
+activify\service\UserService.class
+activify\model\User.class
+activify\repo\ActivityRepository.class
+activify\controller\WindowActivitiesController.class
+activify\service\ActivityService.class

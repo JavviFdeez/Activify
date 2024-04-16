@@ -1,0 +1,16 @@
+/* Form Pane Style */
+.form-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Text Field Style */
+.text-field {
+    -fx-background-color: #F0F0F0;
+}
+
+/* LogIn Button Style */
+.login-button {
+    -fx-background-radius: 3;
+    -fx-background-color: #fc5200;
+    -fx-text-fill: white;
+}

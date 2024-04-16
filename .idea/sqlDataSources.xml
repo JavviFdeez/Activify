@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="c646f3ed-4de8-4438-9ceb-272bd5763df9" name="activify_database@localhost Mapping">
+      <data-sources db="fca89f26-0f26-47e2-ad02-0bf5282b07fc" />
+      <scope>
+        <node kind="database" qname="@">
+          <node kind="schema" qname="@" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+</project>

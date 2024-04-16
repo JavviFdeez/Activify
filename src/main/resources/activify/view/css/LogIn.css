@@ -1,0 +1,22 @@
+/* Estilos para el formulario */
+.form-pane {
+    -fx-background-color: rgba(255,255,255,0.8);
+}
+
+/* Estilos para los campos de texto */
+.text-field {
+    -fx-background-color: #F0F0F0;
+}
+
+/* Estilos para el botón de inicio de sesión */
+.login-button {
+    -fx-background-radius: 3;
+    -fx-background-color: #fc5200;
+    -fx-text-fill: white;
+}
+
+/* Estilos para el botón de registro */
+.register-button {
+    -fx-background-color: #fc5200;
+    -fx-text-fill: white;
+}
