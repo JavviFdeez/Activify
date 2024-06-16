@@ -7,44 +7,78 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.controller.CreateAccountController" stylesheets="/activify/view/css/CreateAccount.css">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="795.0" prefWidth="1538.0" stylesheets="@../css/CreateAccount.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.controller.CreateAccountController">
    <children>
-      <!-- Background Image -->
-      <ImageView fitHeight="400.0" fitWidth="600.0">
+      <ImageView fitHeight="952.0" fitWidth="2075.0" layoutX="-536.0" layoutY="-157.0">
          <image>
-            <Image url="/activify/view/images/FondoLogin.png" />
+            <Image url="@../images/FondoLogin.png" />
          </image>
       </ImageView>
 
       <!-- Form Pane -->
-      <Pane layoutX="157.0" layoutY="41.0" prefHeight="318.0" prefWidth="286.0" styleClass="form-pane">
+      <Pane layoutX="963.0" opacity="0.96" prefHeight="795.0" prefWidth="576.0" style="-fx-border-color: #fc5200; -fx-background-color: #EBEBEB;" styleClass="form-pane">
          <children>
             <!-- Labels -->
-            <Label layoutX="42.0" layoutY="107.0" text="Usuario" textFill="#000000a6" />
-            <Label layoutX="42.0" layoutY="172.0" text="Contraseña" textFill="#000000a6" />
+            <Label layoutX="104.0" layoutY="223.0" text="Usuario" textFill="#000000a6">
+               <font>
+                  <Font size="23.0" />
+               </font></Label>
+            <Label layoutX="107.0" layoutY="330.0" text="Contraseña" textFill="#000000a6">
+               <font>
+                  <Font size="23.0" />
+               </font></Label>
 
-            <!-- Text Fields -->
-            <TextField id="TextAreaUser" layoutX="42.0" layoutY="124.0" prefHeight="25.0" prefWidth="202.0" styleClass="text-field" />
-            <PasswordField id="TextAreaPassword" layoutX="42.0" layoutY="189.0" prefHeight="25.0" prefWidth="202.0" styleClass="text-field" />
+            <!-- Register Button -->
+            <Button fx:id="ButtonRegister" layoutX="105.0" layoutY="446.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="389.0" text="Registrarte">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
 
-            <!-- LogIn Button -->
-            <Button id="ButtonLogIn" layoutX="42.0" layoutY="252.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" text="Iniciar Sesión" styleClass="login-button" />
-
+            <!-- Agregar Texto y Botón para Iniciar Sesión -->
+            <Label layoutX="127.0" layoutY="535.0" prefHeight="17.0" prefWidth="244.0" text="¿Ya tiene una cuenta?">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="ButtonGoToLogin" layoutX="317.0" layoutY="526.0" prefHeight="25.0" prefWidth="158.0" text="Iniciar Sesión">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <TextField fx:id="txtUsername" layoutX="104.0" layoutY="258.0" prefHeight="50.0" prefWidth="389.0">
+               <font>
+                  <Font name="Leelawadee UI Semilight" size="14.0" />
+               </font>
+            </TextField>
+      
+            <!-- Logo Image -->
+            <ImageView fitHeight="233.0" fitWidth="195.0" layoutX="201.0" layoutY="-63.0">
+               <image>
+                  <Image url="@../../view/images/LogoActivify.png" />
+               </image>
+            </ImageView>
+      
             <!-- Title Label -->
-            <Label layoutX="42.0" layoutY="62.0" text="Crear Cuenta" textAlignment="CENTER">
+            <Label layoutX="185.0" layoutY="132.0" prefHeight="38.0" prefWidth="229.0" text="CREAR CUENTA" textAlignment="CENTER">
                <font>
                   <Font name="Ebrima" size="30.0" />
                </font>
             </Label>
-
-            <!-- Logo Image -->
-            <ImageView fitHeight="233.0" fitWidth="195.0" layoutX="45.0" layoutY="-74.0">
-               <image>
-                  <Image url="/activify/view/images/LogoActivify.png" />
-               </image>
-            </ImageView>
+            <Label fx:id="emailLabelNoVisible1" layoutX="191.0" layoutY="223.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
+               <font>
+                  <Font name="Leelawadee UI Semilight" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="emailLabelNoVisible11" layoutX="228.0" layoutY="330.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
+               <font>
+                  <Font name="Leelawadee UI Semilight" size="20.0" />
+               </font>
+            </Label>
+            <Line id="LineActivity" endX="430.0" endY="0.5" layoutX="146.0" layoutY="69.0" startX="-148.0" startY="0.5" stroke="#5e5e5e" strokeLineCap="ROUND" />
+            <PasswordField fx:id="txtPassword" layoutX="105.0" layoutY="374.0" prefHeight="47.0" prefWidth="389.0" />
          </children>
       </Pane>
    </children>

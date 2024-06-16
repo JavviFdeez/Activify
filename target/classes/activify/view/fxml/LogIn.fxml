@@ -1,43 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- Importaciones de clases de JavaFX -->
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="activify.controller.LoginController" stylesheets="/activify/view/css/LogIn.css">
+<!-- Definición del Pane raíz -->
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="795.0" prefWidth="1538.0" stylesheets="@../css/LogIn.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.controller.LoginController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="600.0">
+      <ImageView fitHeight="981.0" fitWidth="2094.0" layoutX="-551.0" layoutY="-181.0">
          <image>
             <Image url="@../images/FondoLogin.png" />
          </image>
       </ImageView>
-      <Pane layoutX="157.0" layoutY="41.0" prefHeight="318.0" prefWidth="286.0" style="-fx-background-color: rgba(255,255,255,0.8);">
+      <Pane layoutX="973.0" opacity="0.96" prefHeight="795.0" prefWidth="569.0" style="-fx-background-color: #EBEBEB; -fx-border-color: #fc5200;" styleClass="form-pane">
          <children>
-            <Label layoutX="42.0" layoutY="66.0" text="Usuario" textFill="#000000a6" />
-            <Label layoutX="42.0" layoutY="131.0" text="Contraseña" textFill="#000000a6" />
-            <Button id="ButtonLogIn" layoutX="42.0" layoutY="211.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-background-radius: 3; -fx-background-color: #fc5200;" text="Iniciar Sesión" textFill="WHITE" />
-            <Label layoutX="30.0" layoutY="265.0" text="¿No tienes una cuenta? ">
+            <Label layoutX="87.0" layoutY="194.0" text="Usuario" textFill="#000000a6">
                <font>
-                  <Font size="15.0" />
+                  <Font size="23.0" />
                </font>
             </Label>
-            <TextArea id="TextAreaUser" layoutX="42.0" layoutY="83.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #F0F0F0;" />
-            <TextArea id="TextAreaPassword" layoutX="42.0" layoutY="148.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-color: #F0F0F0;" />
-            <ImageView id="LogoActivify" fitHeight="309.0" fitWidth="309.0" layoutX="42.0" layoutY="-60.0">
-               <image>
-                  <Image url="@/activify/view/images/LogoActivify.png" />
-               </image>
-            </ImageView>
-            <Button id="ButtonRegister" layoutX="188.0" layoutY="263.0" mnemonicParsing="false" style="-fx-background-color: #fc5200;" text="Resgistrarte" textFill="WHITE" />
-            <ImageView fitHeight="233.0" fitWidth="195.0" layoutX="46.0" layoutY="-74.0">
+            <Label layoutX="87.0" layoutY="311.0" text="Contraseña" textFill="#000000a6">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Button fx:id="ButtonGoToLogin" layoutX="92.0" layoutY="423.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="389.0" text="INICIAR SESION">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <TextField fx:id="txtUsername" layoutX="87.0" layoutY="229.0" prefHeight="50.0" prefWidth="389.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #777777; -fx-border-radius: 10; -fx-padding: 15;">
+               <font>
+                  <Font name="Leelawadee UI Semilight" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="224.0" layoutY="112.0" prefHeight="38.0" prefWidth="119.0" text="SIGN UP" textAlignment="CENTER">
+               <font>
+                  <Font name="Ebrima" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="emailLabelNoVisible1" layoutX="177.0" layoutY="194.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
+               <font>
+                  <Font name="Leelawadee UI Semilight" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="emailLabelNoVisible11" layoutX="214.0" layoutY="311.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
+               <font>
+                  <Font name="Leelawadee UI Semilight" size="20.0" />
+               </font>
+            </Label>
+            <Line id="LineActivity" endX="423.0" endY="0.5000076293945312" layoutX="146.0" layoutY="67.0" startX="-148.0" startY="0.5" stroke="#5e5e5e" strokeLineCap="ROUND" />
+            <Label layoutX="101.0" layoutY="509.0" prefHeight="17.0" prefWidth="244.0" text="¿No tienen aun cuenta?">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonRegister" layoutX="300.0" layoutY="500.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="164.0" text="Regístrese">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="233.0" fitWidth="195.0" layoutX="187.0" layoutY="-60.0">
                <image>
                   <Image url="@../images/LogoActivify.png" />
                </image>
             </ImageView>
+            <PasswordField fx:id="txtPassword" layoutX="87.0" layoutY="348.0" prefHeight="50.0" prefWidth="389.0" />
          </children>
       </Pane>
    </children>

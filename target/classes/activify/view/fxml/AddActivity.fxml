@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -13,109 +13,98 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import java.net.URL?>
-<Pane id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.controller.AddActivityController">
-   <!-- Establece la ruta al archivo CSS -->
-   <stylesheets>
-      <URL value="@/activify/view/css/AddActivity.css" />
-   </stylesheets>
-   <children>
-      <ImageView id="IconPhoto" fitHeight="54.0" fitWidth="51.0" layoutX="541.0" layoutY="8.0">
-         <image>
-            <Image url="@/activify/view/images/user_icon.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="191.0" layoutY="62.0" text="Añadir Actividad" textAlignment="CENTER">
+<!-- Definición del panel raíz -->
+
+<Pane id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="795.0" prefWidth="1538.0" stylesheets="@../css/AddActivity.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.controller.AddActivitiesController">
+    <children>
+        <!-- Etiqueta para el título "Añadir Actividad" -->
+        <Label layoutX="659.0" layoutY="117.0" text="Añadir Actividad" textAlignment="CENTER">
+            <font>
+                <Font name="Ebrima" size="30.0" />
+            </font>
+        </Label>
+        <!-- Línea decorativa -->
+        <Line endX="1434.0" endY="0.5000152587890625" layoutX="104.0" layoutY="81.0" startX="-102.99998474121094" startY="0.5000076293945312" stroke="#5e5e5e" strokeLineCap="ROUND" />
+        <!-- Etiqueta y área de texto para la distancia -->
+        <Text id="TextActividades" fill="#5e5e5e" layoutX="212.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distancia">
+            <font>
+                <Font name="Roboto Bold" size="25.0" />
+            </font>
+        </Text>
+        <TextField fx:id="txtDistance" layoutX="210.0" layoutY="256.0" prefHeight="38.0" prefWidth="210.0" style="-fx-border-color: gray; -fx-border-radius: 5;" />
+        <!-- Menú desplegable para la unidad de la distancia -->
+        <MenuButton layoutX="421.0" layoutY="256.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="168.0" text="kilometros">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Kilometros" />
+                <MenuItem mnemonicParsing="false" text="Millas" />
+            </items>
          <font>
-            <Font name="Ebrima" size="30.0" />
+            <Font size="20.0" />
          </font>
-      </Label>
-      <Line endX="497.0" endY="0.5000076293945312" layoutX="103.0" layoutY="61.0" startX="-102.99998474121094" startY="0.5000076293945312" stroke="#5e5e5e" strokeLineCap="ROUND" />
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="32.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distancia">
+        </MenuButton>
+        <TextField fx:id="txtDuration" layoutX="928.0" layoutY="261.0" prefHeight="38.0" prefWidth="130.0" style="-fx-border-color: gray; -fx-border-radius: 5;" />
+        <TextField fx:id="txtElevation" layoutX="212.0" layoutY="435.0" prefHeight="38.0" prefWidth="210.0" style="-fx-border-color: gray; -fx-border-radius: 5;" />
+        <!-- Menú desplegable para la unidad del desnivel -->
+        <MenuButton layoutX="423.0" layoutY="435.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="120.0" text="metros">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Metros" />
+                <MenuItem mnemonicParsing="false" text="Pies" />
+            </items>
          <font>
-            <Font name="Malgun Gothic Semilight" size="15.0" />
+            <Font name="Roboto Bold" size="20.0" />
+         </font></MenuButton>
+        <!-- Menú desplegable para la unidad del deporte -->
+        <MenuButton fx:id="ButtonSport" layoutX="929.0" layoutY="585.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="397.0" text="Bicicleta">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Bicicleta" />
+                <MenuItem mnemonicParsing="false" text="Carrera a pie" />
+                <MenuItem mnemonicParsing="false" text="Natación" />
+            </items>
+         <font>
+            <Font size="20.0" />
          </font>
-      </Text>
-      <TextArea id="TextAreaDistance" layoutX="32.0" layoutY="235.0" prefHeight="44.0" prefWidth="62.0" style="-fx-background-color: #F0F0F0;" />
-      <MenuButton layoutX="103.0" layoutY="243.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="102.0" text="kilometros">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-        </items>
-      </MenuButton>
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="234.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duración">
+        </MenuButton>
+        <!-- Selector de fecha -->
+        <DatePicker fx:id="datePicker" layoutX="930.0" layoutY="435.0" prefHeight="38.0" prefWidth="397.0" style="-fx-border-color: gray; -fx-border-radius: 5;" />
+        <!-- Área de texto para el título -->
+        <TextField fx:id="txtTitle" layoutX="210.0" layoutY="580.0" prefHeight="38.0" prefWidth="381.0" style="-fx-border-color: gray; -fx-border-radius: 5;" />
+        <!-- Botón para guardar -->
+        <Button fx:id="btnSave" layoutX="210.0" layoutY="725.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="102.0" text="Crear" textFill="WHITE" />
+        <!-- Botón para cancelar -->
+        <Button id="ButtonCanceled" fx:id="ButtonCanceled" layoutX="350.0" layoutY="725.0" mnemonicParsing="false" style="-fx-background-color: #f0f0f0;" text="Cancelar" textFill="#007fc6" />
+        <!-- Imagen del logo de Activify -->
+        <ImageView fitHeight="248.0" fitWidth="261.0" layoutX="640.0" layoutY="-60.0">
+            <image>
+                <Image url="@../images/LogoActivify.png" />
+            </image>
+        </ImageView>
+      <TextField fx:id="txtDuration1" layoutX="1058.0" layoutY="261.0" prefHeight="38.0" prefWidth="130.0" style="-fx-border-color: gray; -fx-border-radius: 5;" />
+      <TextField fx:id="txtDuration11" layoutX="1187.0" layoutY="261.0" prefHeight="38.0" prefWidth="130.0" style="-fx-border-color: gray; -fx-border-radius: 5;" />
+      <Line endX="1432.0" endY="0.5" layoutX="106.0" layoutY="694.0" startX="-102.99998474121094" startY="0.5000076293945312" stroke="#5e5e5e" strokeLineCap="ROUND" />
+      <Text id="TextActividades" fill="#5e5e5e" layoutX="928.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duración">
          <font>
-            <Font name="Malgun Gothic Semilight" size="15.0" />
-         </font>
-      </Text>
-      <TextArea id="TextAreaHour" layoutX="237.0" layoutY="235.0" prefHeight="44.0" prefWidth="21.0" style="-fx-background-color: #F0F0F0;" />
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="292.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h">
-         <font>
-            <Font name="Malgun Gothic Semilight" size="14.0" />
-         </font>
-      </Text>
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="452.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0">
-         <font>
-            <Font name="Malgun Gothic Semilight" size="14.0" />
-         </font>
-      </Text>
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="32.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desnivel">
-         <font>
-            <Font name="Malgun Gothic Semilight" size="15.0" />
-         </font>
-      </Text>
-      <TextArea id="TextAreaUnevenness" layoutX="32.0" layoutY="324.0" prefHeight="44.0" prefWidth="62.0" style="-fx-background-color: #F0F0F0;" />
-      <MenuButton layoutX="106.0" layoutY="332.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="102.0" text="metros">
-         <items>
-            <MenuItem mnemonicParsing="false" text="Action 1" />
-            <MenuItem mnemonicParsing="false" text="Action 2" />
-         </items>
-      </MenuButton>
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="32.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deporte">
-         <font>
-            <Font name="Malgun Gothic Semilight" size="15.0" />
-         </font>
-      </Text>
-      <MenuButton id="ButtonSport" layoutX="32.0" layoutY="157.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="102.0" text="Bicicleta">
-         <items>
-            <MenuItem mnemonicParsing="false" text="Action 1" />
-            <MenuItem mnemonicParsing="false" text="Action 2" />
-         </items>
-      </MenuButton>
-      <DatePicker id="DatePicker" layoutX="242.0" layoutY="335.0" />
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="242.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha">
-         <font>
-            <Font name="Malgun Gothic Semilight" size="15.0" />
+            <Font name="Roboto Bold" size="25.0" />
          </font>
       </Text>
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="233.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titulo">
+      <Text id="TextActividades" fill="#5e5e5e" layoutX="213.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desnivel">
          <font>
-            <Font name="Malgun Gothic Semilight" size="15.0" />
+            <Font name="Roboto Bold" size="25.0" />
          </font>
       </Text>
-      <TextArea id="TextAreaTitulo" layoutX="231.0" layoutY="149.0" prefHeight="44.0" prefWidth="286.0" style="-fx-background-color: #F0F0F0;" />
-      <TextArea id="TextAreaMin" layoutX="311.0" layoutY="235.0" prefHeight="44.0" prefWidth="21.0" style="-fx-background-color: #F0F0F0;" />
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="366.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="min">
+      <Text id="TextActividades" fill="#5e5e5e" layoutX="930.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha">
          <font>
-            <Font name="Malgun Gothic Semilight" size="14.0" />
+            <Font name="Roboto Bold" size="25.0" />
          </font>
       </Text>
-      <TextArea id="TextAreaSecond" layoutX="397.0" layoutY="235.0" prefHeight="44.0" prefWidth="21.0" style="-fx-background-color: #F0F0F0;" />
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="452.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="s">
+      <Text id="TextActividades" fill="#5e5e5e" layoutX="210.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
          <font>
-            <Font name="Malgun Gothic Semilight" size="14.0" />
+            <Font name="Roboto Bold" size="25.0" />
          </font>
       </Text>
-      <ImageView id="IconPhoto" fitHeight="54.0" fitWidth="51.0" layoutX="541.0" layoutY="8.0">
-         <image>
-            <Image url="@/activify/view/images/user_icon.png" />
-         </image>
-      </ImageView>
-      <Button id="ButtonCanceled" layoutX="14.0" layoutY="72.0" mnemonicParsing="false" style="-fx-background-color: #fc5200;" text="CANCELAR" textFill="WHITE" />
-      <ImageView fitHeight="233.0" fitWidth="195.0" layoutX="9.0" layoutY="-76.0">
-         <image>
-            <Image url="@../images/LogoActivify.png" />
-         </image>
-      </ImageView>
-   </children>
+      <Text id="TextActividades" fill="#5e5e5e" layoutX="926.0" layoutY="569.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deporte">
+         <font>
+            <Font name="Roboto Bold" size="25.0" />
+         </font>
+      </Text>
+    </children>
 </Pane>

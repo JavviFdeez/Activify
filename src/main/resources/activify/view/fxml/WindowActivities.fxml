@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -9,69 +9,46 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import java.net.URL?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="795.0" prefWidth="1538.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.controller.WindowActivitiesController">
    <!-- Enlace al archivo CSS -->
    <stylesheets>
-      <URL value="@/activify/view/css/WindowActivities.css" />
+      <URL value="@../../view/css/WindowActivities.css" />
    </stylesheets>
    <children>
-      <!-- Icono de usuario -->
-      <ImageView id="IconPhoto" fitHeight="54.0" fitWidth="51.0" layoutX="541.0" layoutY="8.0">
-         <image>
-            <Image url="/activify/view/images/user_icon.png" />
-         </image>
-      </ImageView>
 
       <!-- Logo de Activify -->
-      <ImageView id="LogoActivify" fitHeight="209.0" fitWidth="149.0" layoutY="-63.0">
+      <ImageView id="LogoActivify" fitHeight="282.0" fitWidth="308.0" layoutX="615.0" layoutY="-55.0">
          <image>
-            <Image url="/activify/view/images/LogoActivify.png" />
+            <Image url="@../../view/images/LogoActivify.png" />
          </image>
       </ImageView>
 
       <!-- Texto de Actividades -->
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="401.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actividades">
+      <Text id="TextActividades" fill="#5e5e5e" layoutX="769.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actividades" textAlignment="CENTER" wrappingWidth="769.5999755859375">
          <font>
-            <Font name="Malgun Gothic Semilight" size="20.0" />
+            <Font name="Roboto Bold" size="30.0" />
          </font>
       </Text>
-
-      <!-- Línea para la sección de Actividades -->
-      <Line id="LineActivity" endX="198.99993896484375" endY="0.5000076293945312" layoutX="401.0" layoutY="100.0" startX="-99.9000244140625" startY="0.5000076293945312" stroke="#fc5200" strokeLineCap="ROUND" strokeWidth="2.0" />
 
       <!-- Texto "Tú" -->
-      <Text id="TextTu" layoutX="288.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tú">
+      <Text id="TextTu" layoutX="743.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tú" textAlignment="CENTER" wrappingWidth="51.806640625">
          <font>
-            <Font name="Malgun Gothic Semilight" size="20.0" />
+            <Font name="Malgun Gothic Semilight" size="35.0" />
          </font>
       </Text>
-
-      <!-- Línea para la sección de Progreso -->
-      <Line id="LineActivity" endX="190.0999755859375" endY="-0.7499923706054688" layoutX="110.0" layoutY="101.0" startX="-111.99998474121094" startY="7.62939453125E-6" stroke="#5e5e5e" strokeLineCap="ROUND" />
 
       <!-- Texto de Progreso -->
-      <Text id="TextProgreso" fill="#5e5e5e" layoutX="109.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progreso">
+      <Button fx:id="TextProgreso" layoutX="-1.0" layoutY="173.0" prefHeight="45.0" prefWidth="770.0" styleClass="text-button" text="Progreso" textFill="#c3c3c3">
          <font>
-            <Font name="Malgun Gothic Semilight" size="20.0" />
-         </font>
-      </Text>
-
-      <!-- Lista de Actividades -->
-      <ListView id="ListActivitys" layoutX="-1.0" layoutY="170.0" prefHeight="233.0" prefWidth="600.0" />
+            <Font name="Roboto Bold" size="29.0" />
+         </font></Button>
 
       <!-- Botón para agregar actividad -->
-      <Button id="ButtonAddActivity" layoutX="213.0" layoutY="119.0" mnemonicParsing="false" style="-fx-background-color: #fc5200;" text="AÑADIR ACTIVIDAD" textFill="WHITE">
+      <Button fx:id="buttonAddActivity" layoutX="615.0" layoutY="335.0" mnemonicParsing="false" onAction="#openAddActivityWindow" prefHeight="100.0" prefWidth="308.0" style="-fx-background-color: #fc5200;" text="AÑADIR ACTIVIDAD" textFill="WHITE">
          <font>
-            <Font size="17.0" />
-         </font>
-      </Button>
-
-      <!-- Imagen del logo de Activify -->
-      <ImageView fitHeight="233.0" fitWidth="195.0" layoutY="-68.0">
-         <image>
-            <Image url="/activify/view/images/LogoActivify.png" />
-         </image>
-      </ImageView>
+            <Font name="Roboto Bold" size="23.0" />
+         </font></Button>
+      <Line endX="-879.0" endY="-9.0" layoutX="879.0" layoutY="242.0" startX="-110.4000244140625" startY="-9.0" stroke="#c3c3c3" strokeLineCap="ROUND" strokeWidth="0.5" />
+      <Line endX="-411.0" endY="-9.0" layoutX="1180.0" layoutY="242.0" startX="358.0" startY="-9.0" stroke="#fc5200" strokeLineCap="ROUND" />
    </children>
 </Pane>

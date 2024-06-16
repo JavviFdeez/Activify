@@ -2,14 +2,13 @@
 CREATE DATABASE activify_database;
 
 -- Create table for User
-CREATE TABLE User (
+CREATE TABLE user (
                       id INT AUTO_INCREMENT PRIMARY KEY,
                       name VARCHAR(255),
-                      email VARCHAR(255),
-                      paswword VARCHAR(255)
+                      password VARCHAR(255)
 );
 -- Create table for Activity
-CREATE TABLE Activity (
+CREATE TABLE activity (
                           id INT AUTO_INCREMENT PRIMARY KEY,
                           distance DECIMAL(10, 2),
                           duration TIME,

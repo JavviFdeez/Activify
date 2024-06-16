@@ -1,129 +1,166 @@
 package activify.model;
 
-import activify.model.User;
 import javafx.beans.property.*;
 
+import javax.persistence.*;
+import java.sql.Time;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "activity")
 public class Activity {
-    private final IntegerProperty id = new SimpleIntegerProperty();
-    private final DoubleProperty distance = new SimpleDoubleProperty();
-    private final StringProperty duration = new SimpleStringProperty();
-    private final IntegerProperty elevation = new SimpleIntegerProperty();
-    private final StringProperty sport = new SimpleStringProperty();
-    private final ObjectProperty<LocalDate> date = new SimpleObjectProperty<>();
-    private final StringProperty title = new SimpleStringProperty();
-    private final StringProperty description = new SimpleStringProperty();
-    private final StringProperty routeType = new SimpleStringProperty();
 
-    public Activity(double distance, String duration, int elevation, String sport, LocalDate date, String title, String description, String routeType) {
-        this.distance.set(distance);
-        this.duration.set(duration);
-        this.elevation.set(elevation);
-        this.sport.set(sport);
-        this.date.set(date);
-        this.title.set(title);
-        this.description.set(description);
-        this.routeType.set(routeType);
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "distance")
+    private double distance;
+
+    @Column(name = "duration")
+    private Time duration;
+
+    @Column(name = "elevation")
+    private int elevation;
+
+    @Column(name = "sport")
+    private String sport;
+
+    @Column(name = "date")
+    private LocalDate date;
+
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "user_id")
+    private int userId;
+
+    // Propiedades para JavaFX
+    @Transient
+    private final IntegerProperty idProperty = new SimpleIntegerProperty();
+
+    @Transient
+    private final DoubleProperty distanceProperty = new SimpleDoubleProperty();
+
+    @Transient
+    private final StringProperty durationProperty = new SimpleStringProperty();
+
+    @Transient
+    private final IntegerProperty elevationProperty = new SimpleIntegerProperty();
+
+    @Transient
+    private final StringProperty sportProperty = new SimpleStringProperty();
+
+    @Transient
+    private final ObjectProperty<LocalDate> dateProperty = new SimpleObjectProperty<>();
+
+    @Transient
+    private final StringProperty titleProperty = new SimpleStringProperty();
+
+    public Activity() {
+        // Constructor por defecto requerido por JPA
     }
 
-    public IntegerProperty idProperty() {
+    public Activity(double distance, Time duration, int elevation, String sport, LocalDate date, String title, int userId) {
+        this.distance = distance;
+        this.duration = duration;
+        this.elevation = elevation;
+        this.sport = sport;
+        this.date = date;
+        this.title = title;
+        this.userId = userId;
+    }
+
+    // Getters y setters para JPA
+    public int getId() {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public double getDistance() {
-        return distance.get();
-    }
-
-    public void setDistance(double distance) {
-        this.distance.set(distance);
-    }
-
-    public DoubleProperty distanceProperty() {
         return distance;
     }
 
-    public String getDuration() {
-        return duration.get();
+    public void setDistance(double distance) {
+        this.distance = distance;
     }
 
-    public void setDuration(String duration) {
-        this.duration.set(duration);
-    }
-
-    public StringProperty durationProperty() {
+    public Time getDuration() {
         return duration;
     }
 
+    public void setDuration(Time duration) {
+        this.duration = duration;
+    }
+
     public int getElevation() {
-        return elevation.get();
-    }
-
-    public void setElevation(int elevation) {
-        this.elevation.set(elevation);
-    }
-
-    public IntegerProperty elevationProperty() {
         return elevation;
     }
 
+    public void setElevation(int elevation) {
+        this.elevation = elevation;
+    }
+
     public String getSport() {
-        return sport.get();
-    }
-
-    public void setSport(String sport) {
-        this.sport.set(sport);
-    }
-
-    public StringProperty sportProperty() {
         return sport;
     }
 
+    public void setSport(String sport) {
+        this.sport = sport;
+    }
+
     public LocalDate getDate() {
-        return date.get();
-    }
-
-    public void setDate(LocalDate date) {
-        this.date.set(date);
-    }
-
-    public ObjectProperty<LocalDate> dateProperty() {
         return date;
     }
 
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
     public String getTitle() {
-        return title.get();
-    }
-
-    public void setTitle(String title) {
-        this.title.set(title);
-    }
-
-    public StringProperty titleProperty() {
         return title;
     }
 
-    public String getDescription() {
-        return description.get();
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setDescription(String description) {
-        this.description.set(description);
+    // Métodos para JavaFX
+    public IntegerProperty idProperty() {
+        return idProperty;
     }
 
-    public StringProperty descriptionProperty() {
-        return description;
+    public DoubleProperty distanceProperty() {
+        return distanceProperty;
     }
 
-    public String getRouteType() {
-        return routeType.get();
+    public StringProperty durationProperty() {
+        return durationProperty;
     }
 
-    public void setRouteType(String routeType) {
-        this.routeType.set(routeType);
+    public IntegerProperty elevationProperty() {
+        return elevationProperty;
     }
 
-    public StringProperty routeTypeProperty() {
-        return routeType;
+    public StringProperty sportProperty() {
+        return sportProperty;
+    }
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public ObjectProperty<LocalDate> dateProperty() {
+        return dateProperty;
+    }
+
+    public StringProperty titleProperty() {
+        return titleProperty;
     }
 }

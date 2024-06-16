@@ -1,53 +1,101 @@
 package activify.repo;
 
 import activify.model.User;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 
+import javax.persistence.*;
 
 public class UserRepository {
 
-    private final SessionFactory sessionFactory;
+    private final EntityManagerFactory entityManagerFactory;
 
-    public UserRepository(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public UserRepository(EntityManagerFactory entityManagerFactory) {
+        this.entityManagerFactory = entityManagerFactory;
     }
-
-    public User getUserByUsername(String username) {
-        String hql = "FROM User WHERE name = :username";
-        try (Session session = sessionFactory.openSession()) {
-            Query<User> query = session.createQuery(hql, User.class);
-            query.setParameter("username", username);
-            return query.uniqueResult();
-        }
-    }
-
 
     public void createUser(User user) {
-        try (Session session = sessionFactory.openSession()) {
-            session.save(user);
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            entityManager.persist(user);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            entityManager.close();
         }
     }
 
     public User getUser(long id) {
-        try (Session session = sessionFactory.openSession()) {
-            return session.get(User.class, id);
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            return entityManager.find(User.class, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            entityManager.close();
         }
     }
 
     public void updateUser(User user) {
-        try (Session session = sessionFactory.openSession()) {
-            session.update(user);
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            entityManager.merge(user);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            entityManager.close();
         }
     }
 
     public void deleteUser(long id) {
-        try (Session session = sessionFactory.openSession()) {
-            User user = session.load(User.class, id);
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            User user = entityManager.find(User.class, id);
             if (user != null) {
-                session.delete(user);
+                entityManager.remove(user);
             }
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            entityManager.close();
+        }
+    }
+
+    public User getUserByUsername(String username) {
+        if (username == null || username.isEmpty()) {
+            return null;
+        }
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            TypedQuery<User> query = entityManager.createQuery(
+                    "SELECT u FROM activify.model.User u WHERE u.name = :username", User.class);
+            query.setParameter("username", username);
+            return query.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            entityManager.close();
         }
     }
 }

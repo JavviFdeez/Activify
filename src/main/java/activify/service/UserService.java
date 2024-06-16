@@ -43,8 +43,37 @@ public class UserService {
     }
 
     public User login(String username, String password) {
-        // Logic to verify credentials in the database
-        // Return the user if credentials are valid, otherwise return null
-        return null; // Here would go the logic to check in the database
+        // Obtener el usuario con el nombre de usuario proporcionado
+        User user = userRepository.getUserByUsername(username);
+
+        // Verificar si se encontró un usuario con el nombre de usuario dado
+        if (user != null) {
+            // Verificar si la contraseña coincide
+            if (user.getPassword().equals(password)) {
+                // Las credenciales son válidas, devuelve el usuario
+                return user;
+            }
+        }
+
+        // Las credenciales no son válidas, devuelve null
+        return null;
     }
+
+    // Método para obtener el ID del usuario actualmente autenticado
+    public int getCurrentUserId() {
+        // Ejemplo ficticio: aquí obtienes el usuario actual desde la sesión o algún contexto de seguridad
+        User currentUser = getCurrentUser();
+        if (currentUser != null) {
+            return currentUser.getId();
+        } else {
+            throw new IllegalStateException("No hay usuario autenticado o sesión activa.");
+        }
+    }
+
+    // Método ficticio para obtener el usuario actual
+    private User getCurrentUser() {
+        // Este es un ejemplo simplificado
+        return SessionManager.getCurrentUser();
+    }
+
 }

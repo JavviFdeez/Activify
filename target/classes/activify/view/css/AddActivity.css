@@ -12,7 +12,100 @@
     -fx-stroke: #5e5e5e;
 }
 
-#ButtonCanceled {
+#btnSave {
+    -fx-background-color: #000000; /* Color inicial */
+    -fx-background-radius: 5;
     -fx-background-color: #fc5200;
-    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10 20;
+    -fx-font-size: 20px;
+    -fx-font-family: "Roboto Bold";
+    -fx-cursor: hand; /* Cambia el cursor al pasar sobre el botón */
+    -fx-effect: dropshadow(three-pass-box, #fc5200, 10, 0, 0, 0);
+    -fx-translate-x: 0;
+    -fx-translate-y: 0;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-transition: transform 1s;
+}
+
+#btnSave:hover {
+    -fx-background-color: #000000; /* Color final */
+    -fx-background-radius: 5;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 5;
+    -fx-text-fill: #fc5200;
+    -fx-padding: 10 20;
+    -fx-font-size: 20px;
+    -fx-font-family: "Roboto Bold";
+    -fx-effect: dropshadow(three-pass-box, #ffffff, 10, 0, 0, 0);
+    -fx-translate-x: 0;
+    -fx-translate-y: 0;
+    -fx-scale-x: 1.05; /* Escala X aumentada */
+    -fx-scale-y: 1.05; /* Escala Y aumentada */
+}
+
+#btnSave:hover:pressed {
+    -fx-background-color: #fc5200;
+    -fx-text-fill: #000000;
+    -fx-border-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+#ButtonCanceled {
+    -fx-background-color: #000000; /* Color inicial */
+    -fx-background-radius: 5;
+    -fx-background-color: #007fc6;
+    -fx-border-radius: 5;
+    -fx-text-fill: #007fc6;
+    -fx-padding: 10 20;
+    -fx-font-size: 20px;
+    -fx-font-family: "Roboto Bold";
+    -fx-cursor: hand; /* Cambia el cursor al pasar sobre el botón */
+    -fx-effect: dropshadow(three-pass-box, #007fc6, 10, 0, 0, 0);
+    -fx-translate-x: 0;
+    -fx-translate-y: 0;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-transition: transform 1s;
+}
+
+#ButtonCanceled:hover {
+    -fx-background-color: #000000; /* Color final */
+    -fx-background-radius: 5;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 5;
+    -fx-text-fill: #007fc6;
+    -fx-padding: 10 20;
+    -fx-font-size: 20px;
+    -fx-font-family: "Roboto Bold";
+    -fx-effect: dropshadow(three-pass-box, #ffffff, 10, 0, 0, 0);
+    -fx-translate-x: 0;
+    -fx-translate-y: 0;
+    -fx-scale-x: 1.05; /* Escala X aumentada */
+    -fx-scale-y: 1.05; /* Escala Y aumentada */
+}
+
+#ButtonCanceled:hover:pressed {
+    -fx-background-color: #007fc6;
+    -fx-text-fill: #000000;
+    -fx-border-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+.txt {
+    -fx-font-family: 'Roboto';
+    -fx-font-weight: bold;
+    -fx-fill: #5e5e5e;
+}
+
+.label {
+    -fx-font-family: 'Roboto';
+    -fx-font-weight: bold;
 }

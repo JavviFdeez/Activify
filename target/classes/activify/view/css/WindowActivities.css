@@ -5,30 +5,59 @@
 
 /* Estilos para los elementos específicos */
 #TextActividades {
-    -fx-fill: #5e5e5e;
+    -fx-fill: #000000;
 }
 
-#LineActivity {
-    -fx-stroke: #fc5200;
-}
-
-#TextTu {
-    -fx-fill: #5e5e5e;
-}
 
 #TextProgreso {
-    -fx-fill: #5e5e5e;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #a1a1a1;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 30.0;
 }
 
-#ButtonAddActivity {
+
+#buttonAddActivity {
+    -fx-background-color: #000000; /* Color inicial */
+    -fx-background-radius: 5;
     -fx-background-color: #fc5200;
-    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10 20;
+    -fx-font-size: 20px;
+    -fx-font-family: "Roboto Bold";
+    -fx-cursor: hand; /* Cambia el cursor al pasar sobre el botón */
+    -fx-effect: dropshadow(three-pass-box, #fc5200, 10, 0, 0, 0);
+    -fx-translate-x: 0;
+    -fx-translate-y: 0;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-transition: transform 1s;
 }
 
-/* Estilo para la lista de actividades */
-#ListActivitys {
-    -fx-background-color: white;
-    -fx-border-color: #ccc;
-    -fx-border-width: 1px;
-    -fx-border-radius: 5px;
+#buttonAddActivity:hover {
+    -fx-background-color: #000000; /* Color final */
+    -fx-background-radius: 5;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 5;
+    -fx-text-fill: #fff;
+    -fx-padding: 10 20;
+    -fx-font-size: 20px;
+    -fx-font-family: "Roboto Bold";
+    -fx-effect: dropshadow(three-pass-box, #ffffff, 10, 0, 0, 0);
+    -fx-translate-x: 0;
+    -fx-translate-y: 0;
+    -fx-scale-x: 1.05; /* Escala X aumentada */
+    -fx-scale-y: 1.05; /* Escala Y aumentada */
+}
+
+#buttonAddActivity:hover:pressed {
+    -fx-background-color: #fc5200;
+    -fx-text-fill: #000000;
+    -fx-border-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
 }

@@ -1,50 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import java.net.URL?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <!-- Establece la ruta al archivo CSS -->
-   <stylesheets>
-      <URL value="@/activify/view/css/WindowProcess.css" />
-   </stylesheets>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="795.0" prefWidth="1538.0" stylesheets="@../css/WindowProcess.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.controller.WindowActivitiesController">
    <children>
-      <ImageView id="IconPhoto" fitHeight="54.0" fitWidth="51.0" layoutX="541.0" layoutY="8.0">
-         <image>
-            <Image url="@/activify/view/images/user_icon.png" />
-         </image>
-      </ImageView>
-      <ImageView id="LogoActivify" fitHeight="209.0" fitWidth="149.0" layoutY="-63.0">
-         <image>
-            <Image url="@/activify/view/images/LogoActivify.png" />
-         </image>
-      </ImageView>
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="401.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actividades">
-         <font>
-            <Font name="Malgun Gothic Semilight" size="20.0" />
-         </font>
-      </Text>
-      <Line id="LineActivity" endX="198.99993896484375" endY="0.5000076293945312" layoutX="401.0" layoutY="100.0" startX="-99.9000244140625" startY="0.5000076293945312" stroke="#5e5e5e" strokeLineCap="ROUND" />
-      <Text id="TextTu" layoutX="289.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tú">
-         <font>
-            <Font name="Malgun Gothic Semilight" size="20.0" />
-         </font>
-      </Text>
-      <Line id="LineActivity" endX="190.0999755859375" endY="-0.7499923706054688" layoutX="110.0" layoutY="101.0" startX="-111.99998474121094" startY="7.62939453125E-6" stroke="#fc5200" strokeLineCap="ROUND" strokeWidth="2.0" />
-      <Text id="TextProgreso" fill="#5e5e5e" layoutX="109.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progreso">
-         <font>
-            <Font name="Malgun Gothic Semilight" size="20.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="233.0" fitWidth="195.0" layoutY="-68.0">
+      <ImageView id="LogoActivify" fitHeight="282.0" fitWidth="308.0" layoutX="615.0" layoutY="-55.0">
          <image>
             <Image url="@../images/LogoActivify.png" />
          </image>
       </ImageView>
+      <Text id="TextActividades" fill="#5e5e5e" layoutX="-1.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progreso" textAlignment="CENTER" wrappingWidth="769.5999755859375">
+         <font>
+            <Font name="Roboto Bold" size="30.0" />
+         </font>
+      </Text>
+      <Text id="TextTu" layoutX="743.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tú" textAlignment="CENTER" wrappingWidth="51.806640625">
+         <font>
+            <Font name="Roboto Bold" size="35.0" />
+         </font>
+      </Text>
+      <Button fx:id="TextActividades" layoutX="769.0" layoutY="175.0" prefHeight="45.0" prefWidth="770.0" style="-fx-background-color: transparent;" text="Actividades" textFill="#c3c3c3">
+         <font>
+            <Font name="Roboto Bold" size="29.0" />
+         </font>
+      </Button>
+      <Line endX="-879.0" endY="-9.0" layoutX="879.0" layoutY="242.0" startX="-110.4000244140625" startY="-9.0" stroke="#fc5200" strokeLineCap="ROUND" />
+      <Line endX="-411.0" endY="-9.0" layoutX="1180.0" layoutY="242.0" startX="358.0" startY="-9.0" stroke="#c3c3c3" strokeLineCap="ROUND" strokeWidth="0.5" />
+      <Pane fx:id="paneForm" layoutX="-1.0" layoutY="227.0" prefHeight="560.0" prefWidth="1532.0">
+         <children>
+            <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutY="14.0" prefHeight="547.0" prefWidth="1532.0" />
+            <VBox layoutY="14.0" prefHeight="547.0" prefWidth="1532.0">
+               <children>
+                  <VBox fx:id="progresoContainer" prefHeight="12.0" prefWidth="1090.0" style="-fx-padding: 0 0 0 20;" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
    </children>
 </Pane>

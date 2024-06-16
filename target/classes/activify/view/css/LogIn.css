@@ -1,22 +1,68 @@
 /* Estilos para el formulario */
 .form-pane {
-    -fx-background-color: rgba(255,255,255,0.8);
+    -fx-background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Estilos para los campos de texto */
-.text-field {
-    -fx-background-color: #F0F0F0;
-}
-
-/* Estilos para el botón de inicio de sesión */
-.login-button {
-    -fx-background-radius: 3;
+#buttonRegister, #ButtonGoToLogin {
+    -fx-background-color: #000000; /* Color inicial */
+    -fx-background-radius: 5;
     -fx-background-color: #fc5200;
-    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10 20;
+    -fx-font-size: 20px;
+    -fx-font-family: "Roboto Bold";
+    -fx-cursor: hand; /* Cambia el cursor al pasar sobre el botón */
+    -fx-effect: dropshadow(three-pass-box, #fc5200, 10, 0, 0, 0);
+    -fx-translate-x: 0;
+    -fx-translate-y: 0;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-transition: transform 1s;
 }
 
-/* Estilos para el botón de registro */
-.register-button {
+#buttonRegister, #ButtonGoToLogin:hover {
+    -fx-background-color: #000000; /* Color final */
+    -fx-background-radius: 5;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 5;
+    -fx-text-fill: #fc5200;
+    -fx-padding: 10 20;
+    -fx-font-size: 20px;
+    -fx-font-family: "Roboto Bold";
+    -fx-effect: dropshadow(three-pass-box, #ffffff, 10, 0, 0, 0);
+    -fx-translate-x: 0;
+    -fx-translate-y: 0;
+    -fx-scale-x: 1.05; /* Escala X aumentada */
+    -fx-scale-y: 1.05; /* Escala Y aumentada */
+}
+
+#buttonRegister, #ButtonGoToLogin:hover:pressed {
     -fx-background-color: #fc5200;
-    -fx-text-fill: white;
+    -fx-text-fill: #000000;
+    -fx-border-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+.text-field, password-field {
+    -fx-font-family: 'Roboto';
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #777777;
+    -fx-border-radius: 10;
+    -fx-padding: 15;
+}
+
+.txt {
+    -fx-font-family: 'Roboto';
+    -fx-font-weight: bold;
+}
+
+.label {
+    -fx-font-family: 'Roboto';
+    -fx-font-weight: bold;
 }

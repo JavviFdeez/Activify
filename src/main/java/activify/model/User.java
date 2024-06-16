@@ -5,45 +5,26 @@ import javax.persistence.*;
 @Entity
 @Table(name = "User")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "password", nullable = false)
+    private String password;
 
-    @Column(name = "password")  // Añadir campo para la contraseña
-    private String password;     // Nuevo campo para almacenar la contraseña
+    // Constructor
+    public User() {
+    }
 
-    // Constructor, getters y setters
-
-    public User(int id, String name, String email, String password) {
-        this.id = id;
+    public User(String name, String password) {
         this.name = name;
-        this.email = email;
-        this.password = password;  // Inicializar el campo de la contraseña
-    }
-
-    public User(String username, String email, String password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;  // Inicializar el campo de la contraseña
-    }
-
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
         this.password = password;
     }
 
-
+    // Getters and setters
     public int getId() {
         return id;
     }
@@ -60,21 +41,21 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     // Method to add a sport activity to the user
     public void addActivity(Activity activity) {
-        //this.SportActivity.add(activity);
+        // Add your logic here to associate the activity with the user
     }
 
     // Method to remove a sport activity from the user
     public void removeActivity(Activity activity) {
-        //this.SportActivity.remove(activity);
+        // Add your logic here to disassociate the activity from the user
     }
 }

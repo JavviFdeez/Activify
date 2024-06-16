@@ -5,38 +5,60 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import org.hibernate.SessionFactory;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.io.IOException;
 
 public class ActivifyApp extends Application {
-    private static final String PERSISTENCE_UNIT_NAME = "activify-persistence-unit";
-    private static EntityManagerFactory entityManagerFactory;
-    private static SessionFactory sessionFactory;
-
+    private EntityManagerFactory entityManagerFactory;
 
     public static void main(String[] args) {
-        entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-        sessionFactory = entityManagerFactory.unwrap(SessionFactory.class);
         launch(args);
-    }
-
-    public static EntityManagerFactory getEntityManagerFactory() {
-        return entityManagerFactory;
     }
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        // Inicializar EntityManagerFactory
+        entityManagerFactory = Persistence.createEntityManagerFactory("activify-persistence-unit");
+
+        // Cargar archivo FXML
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/activify/view/fxml/CreateAccount.fxml"));
         Parent root = loader.load();
+
+        // Inicializar controlador con EntityManagerFactory
         CreateAccountController controller = loader.getController();
-        controller.initialize(sessionFactory);
+        controller.initialize(entityManagerFactory);
+
+        // Establecer escena
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
+
+        // Establecer ícono de la aplicación con un tamaño específico
+        Image appIcon = new Image(getClass().getResourceAsStream("/activify/view/images/LogoActivify.png"));
+        primaryStage.getIcons().add(appIcon);
+
+        // Establecer título de la ventana
+        primaryStage.setTitle("Activify App");
+
+        // Maximizar la ventana
+        primaryStage.setMaximized(true);
+
+        // Mostrar ventana
         primaryStage.show();
     }
 
+    // Método para cargar y configurar el ícono de la aplicación
+    public static void setAppIcon(Stage stage) {
+        Image appIcon = new Image(ActivifyApp.class.getResourceAsStream("/activify/view/images/LogoActivify.png"));
+        stage.getIcons().add(appIcon);
+    }
+
+    @Override
+    public void stop() {
+        // Cerrar EntityManagerFactory cuando la aplicación se detiene
+        entityManagerFactory.close();
+    }
 }
