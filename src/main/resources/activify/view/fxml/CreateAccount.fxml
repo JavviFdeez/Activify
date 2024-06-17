@@ -12,43 +12,44 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="795.0" prefWidth="1538.0" stylesheets="@../css/CreateAccount.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.controller.CreateAccountController">
    <children>
-      <ImageView fitHeight="952.0" fitWidth="2075.0" layoutX="-536.0" layoutY="-157.0">
+      <ImageView fitHeight="795.0" fitWidth="1549.0">
          <image>
             <Image url="@../images/FondoLogin.png" />
          </image>
       </ImageView>
 
       <!-- Form Pane -->
-      <Pane layoutX="963.0" opacity="0.96" prefHeight="795.0" prefWidth="576.0" style="-fx-border-color: #fc5200; -fx-background-color: #EBEBEB;" styleClass="form-pane">
+      <Pane layoutX="479.0" opacity="0.96" prefHeight="795.0" prefWidth="581.0" style="-fx-border-color: #fc5200; -fx-background-color: #EBEBEB;" styleClass="form-pane">
          <children>
+            <Pane layoutY="69.0" prefHeight="145.0" prefWidth="581.0" style="-fx-background-color: gray;" />
             <!-- Labels -->
-            <Label layoutX="104.0" layoutY="223.0" text="Usuario" textFill="#000000a6">
+            <Label layoutX="104.0" layoutY="311.0" text="Usuario" textFill="#000000a6">
                <font>
                   <Font size="23.0" />
                </font></Label>
-            <Label layoutX="107.0" layoutY="330.0" text="Contraseña" textFill="#000000a6">
+            <Label layoutX="107.0" layoutY="418.0" text="Contraseña" textFill="#000000a6">
                <font>
                   <Font size="23.0" />
                </font></Label>
 
             <!-- Register Button -->
-            <Button fx:id="ButtonRegister" layoutX="105.0" layoutY="446.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="389.0" text="Registrarte">
+            <Button fx:id="ButtonRegister" layoutX="105.0" layoutY="534.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="389.0" text="Registrarte">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
 
             <!-- Agregar Texto y Botón para Iniciar Sesión -->
-            <Label layoutX="127.0" layoutY="535.0" prefHeight="17.0" prefWidth="244.0" text="¿Ya tiene una cuenta?">
+            <Label layoutX="152.0" layoutY="629.0" prefHeight="17.0" prefWidth="244.0" text="¿Ya eres miembro?">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button fx:id="ButtonGoToLogin" layoutX="317.0" layoutY="526.0" prefHeight="25.0" prefWidth="158.0" text="Iniciar Sesión">
+            <Button fx:id="ButtonGoToLogin" layoutX="317.0" layoutY="614.0" prefHeight="44.0" prefWidth="163.0" text="Iniciar Sesión">
                <font>
                   <Font size="20.0" />
                </font></Button>
-            <TextField fx:id="txtUsername" layoutX="104.0" layoutY="258.0" prefHeight="50.0" prefWidth="389.0">
+            <TextField fx:id="txtUsername" layoutX="104.0" layoutY="346.0" prefHeight="50.0" prefWidth="389.0">
                <font>
                   <Font name="Leelawadee UI Semilight" size="14.0" />
                </font>
@@ -62,23 +63,34 @@
             </ImageView>
       
             <!-- Title Label -->
-            <Label layoutX="185.0" layoutY="132.0" prefHeight="38.0" prefWidth="229.0" text="CREAR CUENTA" textAlignment="CENTER">
+            <Label layoutX="186.0" layoutY="235.0" prefHeight="38.0" prefWidth="229.0" text="CREAR CUENTA" textAlignment="CENTER">
                <font>
                   <Font name="Ebrima" size="30.0" />
                </font>
             </Label>
-            <Label fx:id="emailLabelNoVisible1" layoutX="191.0" layoutY="223.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
+            <Label fx:id="emailLabelNoVisible1" layoutX="191.0" layoutY="311.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
                <font>
                   <Font name="Leelawadee UI Semilight" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="emailLabelNoVisible11" layoutX="228.0" layoutY="330.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
+            <Label fx:id="emailLabelNoVisible11" layoutX="228.0" layoutY="418.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
                <font>
                   <Font name="Leelawadee UI Semilight" size="20.0" />
                </font>
             </Label>
-            <Line id="LineActivity" endX="430.0" endY="0.5" layoutX="146.0" layoutY="69.0" startX="-148.0" startY="0.5" stroke="#5e5e5e" strokeLineCap="ROUND" />
-            <PasswordField fx:id="txtPassword" layoutX="105.0" layoutY="374.0" prefHeight="47.0" prefWidth="389.0" />
+            <Line id="LineActivity" endX="430.0" endY="0.5" layoutX="146.0" layoutY="69.0" startX="-146.0" startY="0.5" stroke="#5e5e5e" strokeLineCap="ROUND" />
+            <PasswordField fx:id="txtPassword" layoutX="105.0" layoutY="462.0" prefHeight="47.0" prefWidth="389.0" />
+            <Label layoutX="195.0" layoutY="81.0" prefHeight="89.0" prefWidth="210.0" text="Regístrate gratis" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="114.0" layoutY="126.0" prefHeight="89.0" prefWidth="373.0" text="Haz un seguimiento de tu progreso y alcanza tus objetivos." textAlignment="CENTER" textFill="#b5b5b5">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+            </Label>
+            <Line id="LineActivity" endX="435.0" layoutX="146.0" layoutY="214.0" startX="-146.0" startY="0.5" stroke="#5e5e5e" strokeLineCap="ROUND" />
          </children>
       </Pane>
    </children>

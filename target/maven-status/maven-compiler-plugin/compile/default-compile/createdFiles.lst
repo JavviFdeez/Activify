@@ -1,6 +1,5 @@
 activify\repo\UserRepository.class
 activify\ActivifyApp.class
-activify\model\HibernateUtil.class
 activify\controller\LoginController.class
 activify\controller\CreateAccountController.class
 activify\controller\WindowProcessController.class

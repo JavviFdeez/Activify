@@ -5,36 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="231c7d0b-d022-4424-a3aa-31b0ca546cfd" name="Changes" comment="Actualización proyecto">
+      <change afterPath="$PROJECT_DIR$/Activify-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/controller/AddActivitiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/controller/AddActivitiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/controller/WindowActivitiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/controller/WindowActivitiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/controller/WindowProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/controller/WindowProcessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/model/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/model/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/repo/ActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/repo/ActivityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/service/ActivityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/service/ActivityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/activify/view/css/LogIn.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/activify/view/css/LogIn.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/activify/view/css/WindowActivities.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/activify/view/css/WindowActivities.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/activify/view/css/WindowProcess.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/activify/view/css/WindowProcess.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/activify/view/fxml/WindowActivities.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/activify/view/fxml/WindowActivities.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/activify/view/fxml/WindowProcess.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/activify/view/fxml/WindowProcess.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/controller/WindowActivitiesController$AlertType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/controller/WindowActivitiesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/controller/WindowActivitiesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/controller/WindowProcessController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/controller/WindowProcessController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/controller/WindowProcessController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/repo/ActivityRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/repo/ActivityRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/service/ActivityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/service/ActivityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/view/css/LogIn.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/view/css/LogIn.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/view/css/WindowActivities.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/view/css/WindowActivities.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/view/css/WindowProcess.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/view/css/WindowProcess.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/view/fxml/WindowActivities.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/view/fxml/WindowActivities.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/view/fxml/WindowProcess.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/view/fxml/WindowProcess.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/activify/view/fxml/CreateAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/activify/view/fxml/CreateAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/activify/view/fxml/LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/activify/view/fxml/LogIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/activify/view/images/FondoLogin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/activify/view/images/FondoLogin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Activify-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/activify/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,11 +105,11 @@
       <recent name="C:\Users\usuario\IdeaProjects\Activify" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\usuario\IdeaProjects\Activify" />
       <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\resources" />
       <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\resources\META-INF" />
       <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\config" />
       <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\resources\activify\view\fxml" />
-      <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\resources\activify.javvifdez.com\View\Images" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -332,7 +311,7 @@
       <workItem from="1718554427229" duration="5342000" />
       <workItem from="1718617570061" duration="4493000" />
       <workItem from="1718638059807" duration="1432000" />
-      <workItem from="1718639513740" duration="4577000" />
+      <workItem from="1718639513740" duration="6123000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion de las clases User y SportActivity">
       <created>1704970908024</created>
@@ -409,7 +388,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718617606625</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Actualización proyecto">
+      <option name="closed" value="true" />
+      <created>1718644420205</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718644420205</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
