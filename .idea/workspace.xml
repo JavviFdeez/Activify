@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="231c7d0b-d022-4424-a3aa-31b0ca546cfd" name="Changes" comment="Actualización proyecto" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JavviFdeez&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JavviFdeez/Activify.git&quot;,
+    &quot;accountId&quot;: &quot;c75c0cf6-0151-42ad-b5ea-20d7a503a54f&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2al6NFfa8zNNka0i4WzcwVV21od" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ActivifyApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HibernateTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.activify.ActivifyApp.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Maven.Activify [package].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/usuario/IdeaProjects/GeneradorCurriculums&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.35747126&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="activify.javvifdez.com.Controller" />
+      <recent name="Model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\usuario\IdeaProjects\Activify" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\resources" />
+      <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\resources\META-INF" />
+      <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\config" />
+      <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\resources\activify\view\fxml" />
+      <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\resources\activify.javvifdez.com\View\Images" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ActivifyApp">
+    <configuration name="ActivifyApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <classpathModifications>
+        <entry path="C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\ActivifyApp.java" />
+      </classpathModifications>
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/src/main/java/activify/ActivifyApp.java" />
+      </option>
+      <option name="MAIN_CLASS_NAME" value="activify.ActivifyApp" />
+      <module name="Activify" />
+      <option name="PROGRAM_PARAMETERS" value="$Classpath$$USER_HOME$/.m2/repository$ClipboardContent$$JDKPath$" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-22\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="activify.ActivifyApp" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HibernateTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="activify.HibernateTest" />
+      <module name="Activify" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="activify.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/schema.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.HibernateTest" />
+      <item itemvalue="Application.ActivifyApp" />
+      <item itemvalue="Database Script.schema.sql" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ActivifyApp" />
+        <item itemvalue="Application.HibernateTest" />
+        <item itemvalue="Database Script.schema.sql" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="231c7d0b-d022-4424-a3aa-31b0ca546cfd" name="Changes" comment="" />
+      <created>1704880776993</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704880776993</updated>
+      <workItem from="1704880778050" duration="280000" />
+      <workItem from="1704881059709" duration="8000" />
+      <workItem from="1704881073677" duration="543000" />
+      <workItem from="1704881622216" duration="607000" />
+      <workItem from="1704882279123" duration="193000" />
+      <workItem from="1704884920242" duration="7000" />
+      <workItem from="1704969508605" duration="1332000" />
+      <workItem from="1704970844411" duration="1648000" />
+      <workItem from="1705044831788" duration="982000" />
+      <workItem from="1705046184464" duration="4000" />
+      <workItem from="1705047597465" duration="339000" />
+      <workItem from="1705047951744" duration="154000" />
+      <workItem from="1705048747287" duration="243000" />
+      <workItem from="1705230499774" duration="3166000" />
+      <workItem from="1705400398390" duration="4000" />
+      <workItem from="1705403314805" duration="3302000" />
+      <workItem from="1705407157305" duration="2600000" />
+      <workItem from="1705409760670" duration="500000" />
+      <workItem from="1705410262668" duration="273000" />
+      <workItem from="1705410537409" duration="359000" />
+      <workItem from="1705410910349" duration="102000" />
+      <workItem from="1705411014038" duration="16000" />
+      <workItem from="1705411036308" duration="177000" />
+      <workItem from="1705427701854" duration="3437000" />
+      <workItem from="1705489954750" duration="9000" />
+      <workItem from="1705490459266" duration="764000" />
+      <workItem from="1705491227388" duration="2000" />
+      <workItem from="1705492091136" duration="254000" />
+      <workItem from="1705521237631" duration="600000" />
+      <workItem from="1705571445053" duration="154000" />
+      <workItem from="1705657259159" duration="1913000" />
+      <workItem from="1705772634249" duration="9000" />
+      <workItem from="1705772645895" duration="2522000" />
+      <workItem from="1706002641891" duration="32000" />
+      <workItem from="1706009209664" duration="2934000" />
+      <workItem from="1706013818271" duration="619000" />
+      <workItem from="1706014608285" duration="172000" />
+      <workItem from="1706014788097" duration="626000" />
+      <workItem from="1706082753911" duration="11000" />
+      <workItem from="1706090543628" duration="761000" />
+      <workItem from="1706616480385" duration="3517000" />
+      <workItem from="1706687598029" duration="228000" />
+      <workItem from="1706694688613" duration="1492000" />
+      <workItem from="1706700020136" duration="14000" />
+      <workItem from="1707903886474" duration="53000" />
+      <workItem from="1707903958371" duration="28000" />
+      <workItem from="1707904025182" duration="187000" />
+      <workItem from="1707904223154" duration="412000" />
+      <workItem from="1707904643642" duration="25000" />
+      <workItem from="1707904683880" duration="318000" />
+      <workItem from="1707905011625" duration="261000" />
+      <workItem from="1707905308815" duration="45000" />
+      <workItem from="1707905363080" duration="106000" />
+      <workItem from="1707905482110" duration="184000" />
+      <workItem from="1707905830735" duration="278000" />
+      <workItem from="1707906120870" duration="120000" />
+      <workItem from="1707906250469" duration="277000" />
+      <workItem from="1707909122576" duration="11000" />
+      <workItem from="1708509279464" duration="1759000" />
+      <workItem from="1708515554059" duration="4000" />
+      <workItem from="1711624824021" duration="2474000" />
+      <workItem from="1711627397402" duration="1194000" />
+      <workItem from="1711628864467" duration="26000" />
+      <workItem from="1711628892272" duration="12850000" />
+      <workItem from="1711990086632" duration="658000" />
+      <workItem from="1711990752857" duration="1638000" />
+      <workItem from="1711992393637" duration="846000" />
+      <workItem from="1711993247292" duration="3000" />
+      <workItem from="1711993346731" duration="537000" />
+      <workItem from="1711993892677" duration="16000" />
+      <workItem from="1712043376853" duration="1359000" />
+      <workItem from="1712052335892" duration="2957000" />
+      <workItem from="1712220892548" duration="1838000" />
+      <workItem from="1712301884104" duration="388000" />
+      <workItem from="1712648026694" duration="2878000" />
+      <workItem from="1712650916672" duration="834000" />
+      <workItem from="1712651761385" duration="3137000" />
+      <workItem from="1712657026538" duration="3025000" />
+      <workItem from="1712744146207" duration="550000" />
+      <workItem from="1712744712399" duration="944000" />
+      <workItem from="1712824833450" duration="12000" />
+      <workItem from="1712857924344" duration="830000" />
+      <workItem from="1713197543488" duration="174000" />
+      <workItem from="1713197722259" duration="438000" />
+      <workItem from="1713198166170" duration="4123000" />
+      <workItem from="1713203763171" duration="4117000" />
+      <workItem from="1713207890859" duration="765000" />
+      <workItem from="1713208661471" duration="7993000" />
+      <workItem from="1713262073034" duration="2898000" />
+      <workItem from="1713429183330" duration="41000" />
+      <workItem from="1713429315825" duration="2043000" />
+      <workItem from="1713694493303" duration="2000" />
+      <workItem from="1713862282285" duration="156000" />
+      <workItem from="1713862949617" duration="4000" />
+      <workItem from="1713866625173" duration="927000" />
+      <workItem from="1713867586329" duration="583000" />
+      <workItem from="1713868175805" duration="1501000" />
+      <workItem from="1713953484892" duration="277000" />
+      <workItem from="1714114420871" duration="93000" />
+      <workItem from="1714413581488" duration="4165000" />
+      <workItem from="1714462240014" duration="4608000" />
+      <workItem from="1714466876279" duration="2416000" />
+      <workItem from="1714471606238" duration="2860000" />
+      <workItem from="1714639074659" duration="62000" />
+      <workItem from="1715014395657" duration="4666000" />
+      <workItem from="1715067233922" duration="97000" />
+      <workItem from="1715250878488" duration="1209000" />
+      <workItem from="1715255037239" duration="1288000" />
+      <workItem from="1715327131537" duration="17000" />
+      <workItem from="1715340248380" duration="57000" />
+      <workItem from="1715340356832" duration="9000" />
+      <workItem from="1715341255965" duration="624000" />
+      <workItem from="1715342189922" duration="659000" />
+      <workItem from="1715499768120" duration="16000" />
+      <workItem from="1715508999929" duration="99000" />
+      <workItem from="1718378784978" duration="7097000" />
+      <workItem from="1718443649912" duration="7961000" />
+      <workItem from="1718464376198" duration="430000" />
+      <workItem from="1718464921222" duration="19000" />
+      <workItem from="1718465490013" duration="1131000" />
+      <workItem from="1718466896145" duration="1348000" />
+      <workItem from="1718468255791" duration="2048000" />
+      <workItem from="1718520536949" duration="1494000" />
+      <workItem from="1718522597857" duration="2491000" />
+      <workItem from="1718526912597" duration="2576000" />
+      <workItem from="1718554427229" duration="5342000" />
+    </task>
+    <task id="LOCAL-00001" summary="Creacion de las clases User y SportActivity">
+      <created>1704970908024</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704970908024</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Creacion de las clases User y SportActivity">
+      <created>1704971169796</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704971169796</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Creacion de las clases ActivifyApp y Hibernateutil">
+      <created>1705048006770</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705048006770</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Creacion de las vistas, clase DatabaseManager, clase AddActiivityCOntroller y LogInController y actualizando las clases de Model">
+      <created>1705431058564</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705431058564</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Creacion de los DAOS, clase WindowsActivitesController y actualizando los controller, la ActivifyApp y el pom">
+      <created>1706616677257</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706616677257</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Actualizacion Proyecto Actual">
+      <option name="closed" value="true" />
+      <created>1713254213772</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713254213773</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Actualizacion Proyecto Actual">
+      <option name="closed" value="true" />
+      <created>1713254321546</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713254321546</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Creacion de Readme">
+      <option name="closed" value="true" />
+      <created>1713254893907</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713254893907</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Actualización proyecto">
+      <option name="closed" value="true" />
+      <created>1718559097257</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718559097257</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creacion de las clases User y SportActivity" />
+    <MESSAGE value="Creacion de las clases ActivifyApp y Hibernateutil" />
+    <MESSAGE value="Creacion de las vistas, clase DatabaseManager, clase AddActiivityCOntroller y LogInController y actualizando las clases de Model" />
+    <MESSAGE value="Creacion de los DAOS, clase WindowsActivitesController y actualizando los controller, la ActivifyApp y el pom" />
+    <MESSAGE value="Actualizacion Proyecto Actual" />
+    <MESSAGE value="Creacion de Readme" />
+    <MESSAGE value="Actualización proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualización proyecto" />
+  </component>
+</project>
