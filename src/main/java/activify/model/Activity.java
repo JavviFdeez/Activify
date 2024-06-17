@@ -32,8 +32,9 @@ public class Activity {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "user_id")
-    private int userId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     // Propiedades para JavaFX
     @Transient
@@ -61,14 +62,23 @@ public class Activity {
         // Constructor por defecto requerido por JPA
     }
 
-    public Activity(double distance, Time duration, int elevation, String sport, LocalDate date, String title, int userId) {
+    public Activity(double distance, Time duration, int elevation, String sport, LocalDate date, String title, User user) {
         this.distance = distance;
         this.duration = duration;
         this.elevation = elevation;
         this.sport = sport;
         this.date = date;
         this.title = title;
-        this.userId = userId;
+        this.user = user;
+
+        // Actualizar las propiedades de JavaFX
+        idProperty.set(id);
+        distanceProperty.set(distance);
+        durationProperty.set(duration.toString());
+        elevationProperty.set(elevation);
+        sportProperty.set(sport);
+        dateProperty.set(date);
+        titleProperty.set(title);
     }
 
     // Getters y setters para JPA
@@ -78,6 +88,7 @@ public class Activity {
 
     public void setId(int id) {
         this.id = id;
+        idProperty.set(id);
     }
 
     public double getDistance() {
@@ -86,6 +97,7 @@ public class Activity {
 
     public void setDistance(double distance) {
         this.distance = distance;
+        distanceProperty.set(distance);
     }
 
     public Time getDuration() {
@@ -94,6 +106,7 @@ public class Activity {
 
     public void setDuration(Time duration) {
         this.duration = duration;
+        durationProperty.set(duration.toString());
     }
 
     public int getElevation() {
@@ -102,6 +115,7 @@ public class Activity {
 
     public void setElevation(int elevation) {
         this.elevation = elevation;
+        elevationProperty.set(elevation);
     }
 
     public String getSport() {
@@ -110,6 +124,7 @@ public class Activity {
 
     public void setSport(String sport) {
         this.sport = sport;
+        sportProperty.set(sport);
     }
 
     public LocalDate getDate() {
@@ -118,6 +133,7 @@ public class Activity {
 
     public void setDate(LocalDate date) {
         this.date = date;
+        dateProperty.set(date);
     }
 
     public String getTitle() {
@@ -126,6 +142,7 @@ public class Activity {
 
     public void setTitle(String title) {
         this.title = title;
+        titleProperty.set(title);
     }
 
     // Métodos para JavaFX
@@ -148,13 +165,6 @@ public class Activity {
     public StringProperty sportProperty() {
         return sportProperty;
     }
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     public ObjectProperty<LocalDate> dateProperty() {
         return dateProperty;
@@ -162,5 +172,14 @@ public class Activity {
 
     public StringProperty titleProperty() {
         return titleProperty;
+    }
+
+    // Getters y setters para la relación con User
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

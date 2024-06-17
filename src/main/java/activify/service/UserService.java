@@ -2,10 +2,13 @@ package activify.service;
 
 import activify.model.User;
 import activify.repo.UserRepository;
+import activify.util.SessionFactoryUtil;
+import org.hibernate.Session;
 
 public class UserService {
 
     private UserRepository userRepository;
+    private static User currentUser;  // Campo estático para almacenar el usuario actual
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -50,7 +53,8 @@ public class UserService {
         if (user != null) {
             // Verificar si la contraseña coincide
             if (user.getPassword().equals(password)) {
-                // Las credenciales son válidas, devuelve el usuario
+                // Las credenciales son válidas, establece el usuario actual
+                currentUser = user;
                 return user;
             }
         }
@@ -61,8 +65,6 @@ public class UserService {
 
     // Método para obtener el ID del usuario actualmente autenticado
     public int getCurrentUserId() {
-        // Ejemplo ficticio: aquí obtienes el usuario actual desde la sesión o algún contexto de seguridad
-        User currentUser = getCurrentUser();
         if (currentUser != null) {
             return currentUser.getId();
         } else {
@@ -70,10 +72,8 @@ public class UserService {
         }
     }
 
-    // Método ficticio para obtener el usuario actual
-    private User getCurrentUser() {
-        // Este es un ejemplo simplificado
-        return SessionManager.getCurrentUser();
+    // Método para obtener el usuario actualmente autenticado
+    public User getCurrentUser() {
+        return currentUser;
     }
-
 }

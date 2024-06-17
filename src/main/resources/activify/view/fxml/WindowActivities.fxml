@@ -17,7 +17,7 @@
    <children>
 
       <!-- Logo de Activify -->
-      <ImageView id="LogoActivify" fitHeight="282.0" fitWidth="308.0" layoutX="615.0" layoutY="-55.0">
+      <ImageView id="LogoActivify" fitHeight="282.0" fitWidth="308.0" layoutX="615.0" layoutY="-48.0">
          <image>
             <Image url="@../../view/images/LogoActivify.png" />
          </image>
@@ -33,12 +33,12 @@
       <!-- Texto "Tú" -->
       <Text id="TextTu" layoutX="743.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tú" textAlignment="CENTER" wrappingWidth="51.806640625">
          <font>
-            <Font name="Malgun Gothic Semilight" size="35.0" />
+            <Font name="Roboto Bold" size="35.0" />
          </font>
       </Text>
 
-      <!-- Texto de Progreso -->
-      <Button fx:id="TextProgreso" layoutX="-1.0" layoutY="173.0" prefHeight="45.0" prefWidth="770.0" styleClass="text-button" text="Progreso" textFill="#c3c3c3">
+      <!-- Boton de Progreso -->
+      <Button fx:id="buttonProgreso" layoutX="-1.0" layoutY="173.0" prefHeight="45.0" prefWidth="770.0" styleClass="text-button" text="Progreso" textFill="#c3c3c3">
          <font>
             <Font name="Roboto Bold" size="29.0" />
          </font></Button>
@@ -47,7 +47,8 @@
       <Button fx:id="buttonAddActivity" layoutX="615.0" layoutY="335.0" mnemonicParsing="false" onAction="#openAddActivityWindow" prefHeight="100.0" prefWidth="308.0" style="-fx-background-color: #fc5200;" text="AÑADIR ACTIVIDAD" textFill="WHITE">
          <font>
             <Font name="Roboto Bold" size="23.0" />
-         </font></Button>
+         </font>
+      </Button>
       <Line endX="-879.0" endY="-9.0" layoutX="879.0" layoutY="242.0" startX="-110.4000244140625" startY="-9.0" stroke="#c3c3c3" strokeLineCap="ROUND" strokeWidth="0.5" />
       <Line endX="-411.0" endY="-9.0" layoutX="1180.0" layoutY="242.0" startX="358.0" startY="-9.0" stroke="#fc5200" strokeLineCap="ROUND" />
    </children>

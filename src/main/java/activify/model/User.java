@@ -1,22 +1,27 @@
 package activify.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
 
     @Column(name = "password", nullable = false)
     private String password;
 
-    // Constructor
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Activity> activities;
+
     public User() {
+
     }
 
     public User(String name, String password) {
@@ -24,7 +29,8 @@ public class User {
         this.password = password;
     }
 
-    // Getters and setters
+    // Getters y setters
+
     public int getId() {
         return id;
     }
@@ -37,7 +43,7 @@ public class User {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String username) {
         this.name = name;
     }
 
@@ -49,13 +55,11 @@ public class User {
         this.password = password;
     }
 
-    // Method to add a sport activity to the user
-    public void addActivity(Activity activity) {
-        // Add your logic here to associate the activity with the user
+    public List<Activity> getActivities() {
+        return activities;
     }
 
-    // Method to remove a sport activity from the user
-    public void removeActivity(Activity activity) {
-        // Add your logic here to disassociate the activity from the user
+    public void setActivities(List<Activity> activities) {
+        this.activities = activities;
     }
 }

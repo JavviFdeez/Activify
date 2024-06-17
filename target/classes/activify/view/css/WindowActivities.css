@@ -3,13 +3,18 @@
     -fx-background-color: #f0f0f0;
 }
 
+/* Estilos para el logo de Activify */
+#LogoActivify {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0); /* Sombra */
+}
+
 /* Estilos para los elementos específicos */
 #TextActividades {
     -fx-fill: #000000;
 }
 
 
-#TextProgreso {
+#buttonProgreso {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-text-fill: #a1a1a1;
@@ -60,4 +65,13 @@
     -fx-border-radius: 5;
     -fx-scale-x: 1;
     -fx-scale-y: 1;
+}
+.txt {
+    -fx-font-family: 'Roboto';
+    -fx-font-weight: bold;
+}
+
+.label {
+    -fx-font-family: 'Roboto';
+    -fx-font-weight: bold;
 }

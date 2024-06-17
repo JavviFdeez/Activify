@@ -19,6 +19,10 @@ public class ActivityService {
         activityRepository.createActivity(activity);
     }
 
+    public List<Activity> getActivitiesByUserId(int userId) {
+        return activityRepository.getActivitiesByUserId(userId);
+    }
+
     public Activity getActivity(long id) {
         return activityRepository.getActivity(id);
     }

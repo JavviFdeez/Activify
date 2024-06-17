@@ -16,8 +16,6 @@ CREATE TABLE activity (
                           sport VARCHAR(255),
                           date DATE,
                           title VARCHAR(255),
-                          description TEXT,
-                          route_type VARCHAR(255),
                           user_id INT,
                           FOREIGN KEY (user_id) REFERENCES User(id)
 );

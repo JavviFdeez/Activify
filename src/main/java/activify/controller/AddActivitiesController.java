@@ -1,7 +1,9 @@
 package activify.controller;
 
 import activify.model.Activity;
+import activify.model.User;
 import activify.repo.ActivityRepository;
+import activify.repo.UserRepository;
 import activify.service.ActivityService;
 import activify.service.UserService;
 import activify.util.SessionFactoryUtil;
@@ -50,13 +52,14 @@ public class AddActivitiesController {
     private Button ButtonCanceled;
 
     private ActivityService activityService;
+    private UserService userService;
 
     @FXML
     private void initialize() {
-        // Inicializar el servicio de actividad con el repositorio y SessionFactory adecuados
         activityService = new ActivityService(new ActivityRepository(SessionFactoryUtil.getSessionFactory()));
+        userService = new UserService(new UserRepository(SessionFactoryUtil.getSessionFactory())); // Inicializa el servicio de usuario
         updateTitle("Bicicleta");
-        // Configurar el evento para el botón Guardar
+
         btnSave.setOnAction(event -> saveActivity());
         ButtonCanceled.setOnAction(event -> {
             try {
@@ -66,12 +69,10 @@ public class AddActivitiesController {
             }
         });
 
-        // Configurar eventos para los elementos del menú de deportes
         for (MenuItem item : ButtonSport.getItems()) {
             item.setOnAction(this::handleMenuItemAction);
         }
 
-        // Configuración adicional de la interfaz de usuario
         setupUI();
     }
 
@@ -84,7 +85,6 @@ public class AddActivitiesController {
     @FXML
     void saveActivity() {
         try {
-            // Obtener los valores ingresados por el usuario desde los campos de texto y otros controles
             double distance = Double.parseDouble(txtDistance.getText());
             int hours = Integer.parseInt(txtDuration.getText());
             int minutes = Integer.parseInt(txtDuration1.getText());
@@ -94,20 +94,22 @@ public class AddActivitiesController {
             LocalDate date = datePicker.getValue();
             String title = txtTitle.getText();
 
-            // Obtener el ID del usuario actual
-            UserService userService = new UserService();
-            int userId = userService.getCurrentUserId();
+            // Obtén el usuario actual
+            User currentUser = userService.getCurrentUser();
 
-            // Crear una nueva actividad
-            Time duration = new Time(hours, minutes, seconds);  // Crear un objeto Time con los valores obtenidos
+            if (currentUser != null) {
+                // Crear un objeto Time con los valores obtenidos
+                Time duration = new Time(hours * 3600000L + minutes * 60000L + seconds * 1000L);
 
-            Activity newActivity = new Activity(distance, duration, elevation, sport, date, title, userId);
+                // Crear una nueva actividad asignando el usuario actual
+                Activity newActivity = new Activity(distance, duration, elevation, sport, date, title, currentUser);
+                activityService.createActivity(newActivity);
 
-            // Guardar la nueva actividad utilizando el servicio de actividad
-            activityService.createActivity(newActivity);
-
-            // Mostrar una alerta de éxito
-            showAlert(Alert.AlertType.INFORMATION, "Actividad Guardada", "La actividad se ha guardado correctamente.");
+                showAlert(Alert.AlertType.INFORMATION, "Actividad Guardada", "La actividad se ha guardado correctamente.");
+                backToWindowActivities();
+            } else {
+                showAlert(Alert.AlertType.ERROR, "Error al guardar actividad", "No se pudo obtener el usuario actual.");
+            }
         } catch (NumberFormatException e) {
             showAlert(Alert.AlertType.ERROR, "Error de formato", "Asegúrate de ingresar valores numéricos válidos para la distancia, elevación y duración.");
         } catch (Exception e) {
@@ -117,7 +119,6 @@ public class AddActivitiesController {
     }
 
 
-    // Método para manejar el evento de selección de MenuItem
     private void handleMenuItemAction(ActionEvent event) {
         MenuItem menuItem = (MenuItem) event.getSource();
         String selectedSport = menuItem.getText();
@@ -125,7 +126,6 @@ public class AddActivitiesController {
         updateTitle(selectedSport);
     }
 
-    // Actualizar el título basado en el deporte seleccionado
     private void updateTitle(String selectedSport) {
         switch (selectedSport) {
             case "Bicicleta":
@@ -143,31 +143,33 @@ public class AddActivitiesController {
         }
     }
 
+    private void backToWindowActivities() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/activify/view/fxml/WindowActivities.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) ButtonSport.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     @FXML
-    void cancelActivity() throws IOException {
+    private void cancelActivity() throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmación de cancelación");
         alert.setHeaderText("¿Estás seguro de que deseas cancelar?");
         alert.setContentText("Si cancelas, se perderán todos los cambios.");
 
-        // Manejar la respuesta del usuario
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            // Usuario confirmó la cancelación, navegar a WindowActivities.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/activify/view/fxml/WindowActivities.fxml"));
             Parent root = loader.load();
-
-            // Obtener el escenario actual desde el emailTextField
             Stage stage = (Stage) ButtonSport.getScene().getWindow();
-
-            // Establecer la nueva escena en el escenario
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
     }
 
-    // Método para mostrar una alerta
     private void showAlert(Alert.AlertType type, String title, String message) {
         Alert alert = new Alert(type);
         alert.setTitle(title);

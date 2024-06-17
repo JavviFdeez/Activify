@@ -10,14 +10,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="795.0" prefWidth="1538.0" stylesheets="@../css/WindowProcess.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.controller.WindowActivitiesController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="795.0" prefWidth="1538.0" stylesheets="@../css/WindowProcess.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.controller.WindowProcessController">
    <children>
       <ImageView id="LogoActivify" fitHeight="282.0" fitWidth="308.0" layoutX="615.0" layoutY="-55.0">
          <image>
             <Image url="@../images/LogoActivify.png" />
          </image>
       </ImageView>
-      <Text id="TextActividades" fill="#5e5e5e" layoutX="-1.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progreso" textAlignment="CENTER" wrappingWidth="769.5999755859375">
+      <Text id="textProgreso" layoutX="-1.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progreso" textAlignment="CENTER" wrappingWidth="769.5999755859375">
          <font>
             <Font name="Roboto Bold" size="30.0" />
          </font>
@@ -27,21 +27,20 @@
             <Font name="Roboto Bold" size="35.0" />
          </font>
       </Text>
-      <Button fx:id="TextActividades" layoutX="769.0" layoutY="175.0" prefHeight="45.0" prefWidth="770.0" style="-fx-background-color: transparent;" text="Actividades" textFill="#c3c3c3">
+      <Button fx:id="buttonActividades" layoutX="769.0" layoutY="175.0" prefHeight="45.0" prefWidth="770.0" style="-fx-background-color: transparent;" text="Actividades" textFill="#c3c3c3">
          <font>
             <Font name="Roboto Bold" size="29.0" />
          </font>
       </Button>
       <Line endX="-879.0" endY="-9.0" layoutX="879.0" layoutY="242.0" startX="-110.4000244140625" startY="-9.0" stroke="#fc5200" strokeLineCap="ROUND" />
       <Line endX="-411.0" endY="-9.0" layoutX="1180.0" layoutY="242.0" startX="358.0" startY="-9.0" stroke="#c3c3c3" strokeLineCap="ROUND" strokeWidth="0.5" />
-      <Pane fx:id="paneForm" layoutX="-1.0" layoutY="227.0" prefHeight="560.0" prefWidth="1532.0">
+      <Pane fx:id="paneForm" layoutX="3.0" layoutY="227.0" prefHeight="560.0" prefWidth="1532.0" xmlns:fx="http://javafx.com/fxml">
          <children>
-            <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutY="14.0" prefHeight="547.0" prefWidth="1532.0" />
-            <VBox layoutY="14.0" prefHeight="547.0" prefWidth="1532.0">
-               <children>
-                  <VBox fx:id="progresoContainer" prefHeight="12.0" prefWidth="1090.0" style="-fx-padding: 0 0 0 20;" />
-               </children>
-            </VBox>
+            <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutY="10.0" prefHeight="551.0" prefWidth="1532.0">
+               <VBox fx:id="progresoContainer" prefHeight="539.0" prefWidth="1528.0">
+                  <!-- Aquí se agregarán dinámicamente los VBox de las actividades -->
+               </VBox>
+            </ScrollPane>
          </children>
       </Pane>
    </children>

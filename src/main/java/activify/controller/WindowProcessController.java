@@ -1,90 +1,151 @@
 package activify.controller;
 
 import activify.model.Activity;
+import activify.model.User;
 import activify.repo.ActivityRepository;
+import activify.repo.UserRepository;
 import activify.service.ActivityService;
-import javafx.animation.PauseTransition;
+import activify.service.UserService;
+import activify.util.SessionFactoryUtil;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class WindowProcessController {
 
     private ActivityService activityService;
+    private UserService userService;
 
     @FXML
-    private TableView<Activity> activityTableView;
+    private Button buttonActividades;
 
     @FXML
-    private TableColumn<Activity, Integer> colId;
-
-    @FXML
-    private TableColumn<Activity, Double> colDistance;
-
-    @FXML
-    private TableColumn<Activity, String> colDuration;
-
-    @FXML
-    private TableColumn<Activity, Integer> colElevation;
-
-    @FXML
-    private TableColumn<Activity, String> colSport;
-
-    @FXML
-    private TableColumn<Activity, String> colDate;
-
-    @FXML
-    private TableColumn<Activity, String> colTitle;
-
-    @FXML
-    private Button TextActividades;
+    private VBox progresoContainer;
 
     @FXML
     public void initialize() {
         // Configurar y crear la instancia de SessionFactory
-        SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+        SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
 
-        // Crear una instancia de ActivityRepository y pasarle el SessionFactory
+        // Crear instancias de ActivityRepository y UserRepository
         ActivityRepository activityRepository = new ActivityRepository(sessionFactory);
+        UserRepository userRepository = new UserRepository(sessionFactory);
 
-        // Crear una instancia de ActivityService y pasarle la instancia de ActivityRepository
+        // Crear instancias de ActivityService y UserService
         activityService = new ActivityService(activityRepository);
+        userService = new UserService(userRepository);
 
-        // Asignar el controlador de eventos a los botones
-        TextActividades.setOnAction(event -> handleButtonActivities());
+        // Asignar el controlador de eventos al botón
+        buttonActividades.setOnAction(event -> handleButtonActivities());
 
-        // Configurar las celdas de la tabla para mostrar los datos de la actividad
-        colId.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
-        colDistance.setCellValueFactory(cellData -> cellData.getValue().distanceProperty().asObject());
-        colDuration.setCellValueFactory(cellData -> cellData.getValue().durationProperty());
-        colElevation.setCellValueFactory(cellData -> cellData.getValue().elevationProperty().asObject());
-        colSport.setCellValueFactory(cellData -> cellData.getValue().sportProperty());
-        colDate.setCellValueFactory(cellData -> cellData.getValue().dateProperty().asString());
-        colTitle.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
-
-        // Cargar todas las actividades y mostrarlas en la tabla
+        // Cargar todas las actividades del usuario autenticado y mostrarlas en el contenedor
         loadActivities();
     }
 
     private void loadActivities() {
-        // Obtener todas las actividades del servicio
-        List<Activity> activities = activityService.getAllActivities();
-        if (activities != null) {
-            // Agregar las actividades a la tabla
-            activityTableView.getItems().addAll(activities);
+        try {
+            // Obtener el ID del usuario autenticado
+            int userId = userService.getCurrentUserId();
+
+            // Obtener todas las actividades del usuario
+            List<Activity> activities = activityService.getActivitiesByUserId(userId);
+
+            if (activities != null) {
+                for (Activity activity : activities) {
+                    // Crear y agregar un nuevo VBox con los detalles de la actividad
+                    VBox activityBox = createActivityBox(activity);
+                    progresoContainer.getChildren().add(activityBox);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Error al cargar actividades", "Ocurrió un error al intentar cargar las actividades del usuario.");
         }
     }
+
+    private VBox createActivityBox(Activity activity) {
+        VBox activityBox = new VBox();
+        activityBox.setStyle("-fx-padding: 10; -fx-border-style: solid inside; -fx-border-width: 2; -fx-border-insets: 5; -fx-border-radius: 5; -fx-border-color: grey;");
+
+        try {
+            // Cargar la imagen desde src/main/resources/activify/view/images/user_icon.png
+            InputStream imageStream = getClass().getResourceAsStream("/activify/view/images/user_icon.png");
+            if (imageStream != null) {
+                Image image = new Image(imageStream);
+                ImageView activityImageView = new ImageView(image);
+                activityImageView.setFitWidth(50);
+                activityImageView.setFitHeight(50);
+
+                // Configurar el nombre de usuario con tamaño de letra 18px
+                Label usernameLabel = new Label(activity.getUser().getName());
+                usernameLabel.setStyle("-fx-font-size: 18px;");
+
+                // Configurar la fecha en color gris
+                Label dateLabel = new Label(activity.getDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+                dateLabel.setStyle("-fx-text-fill: grey;");
+
+                // Configurar el título con tamaño de letra 22px
+                Label titleLabel = new Label(activity.getTitle());
+                titleLabel.setStyle("-fx-font-size: 22px;");
+
+                // Configurar los textos y datos de distancia, desnivel positivo y tiempo
+                Label distanceTextLabel = new Label("Distancia");
+                Label elevationTextLabel = new Label("Desnivel Positivo");
+                Label durationTextLabel = new Label("Tiempo");
+
+                Label distanceValueLabel = new Label(String.format("%.2f km", activity.getDistance()));
+                Label elevationValueLabel = new Label(activity.getElevation() + " m");
+                Label durationValueLabel = new Label(activity.getDuration().toString());
+
+                // Configurar un HBox para contener los textos y valores en una fila
+                HBox detailsHBox = new HBox(10);
+                detailsHBox.getChildren().addAll(
+                        new VBox(distanceTextLabel, distanceValueLabel),
+                        new VBox(elevationTextLabel, elevationValueLabel),
+                        new VBox(durationTextLabel, durationValueLabel)
+                );
+
+                // Configurar un VBox para contener todos los elementos de texto a la derecha de la imagen
+                VBox textVBox = new VBox(5);
+                textVBox.getChildren().addAll(usernameLabel, dateLabel, titleLabel, detailsHBox);
+
+                // Configurar un HBox para contener la imagen y el VBox de textos
+                HBox mainHBox = new HBox(10);
+                mainHBox.getChildren().addAll(activityImageView, textVBox);
+
+                // Agregar el HBox principal al VBox de la actividad
+                activityBox.getChildren().add(mainHBox);
+            } else {
+                // Manejar el caso donde imageStream es null (recurso no encontrado)
+                showAlert(Alert.AlertType.ERROR, "Error al cargar actividad", "No se encontró la imagen del usuario.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Error al cargar actividad", "Ocurrió un error al cargar los detalles de la actividad.");
+        }
+
+        return activityBox;
+    }
+
 
     private void handleButtonActivities() {
         try {
@@ -92,8 +153,8 @@ public class WindowProcessController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/activify/view/fxml/WindowActivities.fxml"));
             Parent root = loader.load();
 
-            // Obtener el escenario actual desde el TextActividades
-            Stage stage = (Stage) TextActividades.getScene().getWindow();
+            // Obtener el escenario actual desde el buttonActividades
+            Stage stage = (Stage) buttonActividades.getScene().getWindow();
 
             // Establecer la nueva escena en el escenario
             Scene scene = new Scene(root);
@@ -102,60 +163,15 @@ public class WindowProcessController {
         } catch (IOException e) {
             e.printStackTrace();
             // Manejar cualquier error de carga del archivo FXML
-            showAutoClosingAlert("ERROR: Error al cargar la pantalla de datos de actividades.", Alert.AlertType.ERROR, Duration.seconds(5));
+            showAlert(Alert.AlertType.ERROR, "Error al cargar la ventana de actividades.", "Ocurrió un error al intentar cargar la ventana de actividades.");
         }
     }
 
-    public void showAutoClosingAlert(String message, Alert.AlertType alertType, Duration duration) {
-        Alert alert = new Alert(alertType);
+    private void showAlert(Alert.AlertType type, String title, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
-
-        String imagePath = "";
-
-        switch (alertType) {
-            case INFORMATION:
-                imagePath = "/org/JavviFdeez/images/MaterialSymbolsCheckCircleOutline2.png";
-                break;
-            case WARNING:
-                imagePath = "/org/JavviFdeez/images/MaterialSymbolsErrorOutlineRounded.png";
-                break;
-            case ERROR:
-                imagePath = "/org/JavviFdeez/images/MaterialSymbolsErrorOutlineRounded.png";
-                break;
-            case CONFIRMATION:
-                imagePath = "/org/JavviFdeez/images/MaterialSymbolsCheckCircleOutline2.png";
-                break;
-        }
-
-        // Crear el ImageView con el icono y el tamaño deseado
-        ImageView icon = new ImageView(new Image(getClass().getResourceAsStream(imagePath)));
-        icon.setFitWidth(32);
-        icon.setFitHeight(32);
-
-        // Establecer el icono personalizado como el gráfico de la alerta
-        alert.setGraphic(icon);
-
-        Button closeButton = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
-        closeButton.setVisible(false);
-
-        DialogPane dialogPane = alert.getDialogPane();
-
-        // Establecer la altura mínima y máxima para controlar el tamaño vertical
-        dialogPane.setMinHeight(80);
-        dialogPane.setMaxHeight(150);
-
-        dialogPane.getScene().getRoot().setStyle(" -fx-background-radius: 15; -fx-background-color: transparent;");
-        dialogPane.setStyle("-fx-font-family: 'Roboto';");
-        alert.getDialogPane().getScene().setFill(null);
-
-        alert.getDialogPane().setPrefSize(500, 1);
-
-        alert.show();
-
-        // Configurar la duración de la alerta
-        PauseTransition delay = new PauseTransition(duration);
-        delay.setOnFinished(event -> alert.close());
-        delay.play();
+        alert.showAndWait();
     }
 }

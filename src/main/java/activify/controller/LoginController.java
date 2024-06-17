@@ -58,10 +58,10 @@ public class LoginController {
         if (user != null) {
             // Aquí se abrirá la ventana de actividades si las credenciales son correctas
             openWindowActivities();
+
         } else {
             showErrorDialog("Credenciales incorrectas");
         }
-        openWindowActivities();
     }
 
     @FXML

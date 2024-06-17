@@ -1,9 +1,8 @@
 package activify.repo;
 
 import activify.model.Activity;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.*;
+
 import java.util.List;
 
 public class ActivityRepository {
@@ -22,6 +21,23 @@ public class ActivityRepository {
             return null; // Handle error gracefully in your application
         }
     }
+
+    public List<Activity> getActivitiesByUserId(int userId) {
+        try (Session session = sessionFactory.openSession()) {
+            Query<Activity> query = session.createQuery("FROM Activity WHERE user.id = :userId", Activity.class);
+            query.setParameter("userId", userId);
+            List<Activity> activities = query.list();
+
+            for (Activity activity : activities) {
+                // Inicializar la propiedad user
+                Hibernate.initialize(activity.getUser());
+            }
+
+            return activities;
+        }
+    }
+
+
 
     public void createActivity(Activity activity) {
         try (Session session = sessionFactory.openSession()) {

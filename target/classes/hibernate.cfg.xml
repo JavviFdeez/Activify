@@ -23,6 +23,7 @@
         <property name="hibernate.c3p0.idle_test_period">3000</property>
 
         <!-- Configuración del paquete de escaneo de entidades -->
-        <mapping class="activify.model.Activity" />
+        <mapping class="activify.model.Activity"/>
+        <mapping class="activify.model.User"/>
     </session-factory>
 </hibernate-configuration>
