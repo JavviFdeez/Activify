@@ -16,65 +16,77 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="795.0" prefWidth="1538.0" stylesheets="@../css/LogIn.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="activify.controller.LoginController">
    <children>
-      <ImageView fitHeight="981.0" fitWidth="2094.0" layoutX="-551.0" layoutY="-181.0">
+      <ImageView fitHeight="795.0" fitWidth="1549.0" layoutX="-4.0">
          <image>
             <Image url="@../images/FondoLogin.png" />
          </image>
       </ImageView>
-      <Pane layoutX="973.0" opacity="0.96" prefHeight="795.0" prefWidth="569.0" style="-fx-background-color: #EBEBEB; -fx-border-color: #fc5200;" styleClass="form-pane">
+      <Pane layoutX="485.0" opacity="0.96" prefHeight="795.0" prefWidth="569.0" style="-fx-background-color: #EBEBEB; -fx-border-color: #fc5200;" styleClass="form-pane">
          <children>
-            <Label layoutX="87.0" layoutY="194.0" text="Usuario" textFill="#000000a6">
+            <Pane layoutY="67.0" prefHeight="145.0" prefWidth="570.0" style="-fx-background-color: gray;" />
+            <Label layoutX="91.0" layoutY="307.0" text="Usuario" textFill="#000000a6">
                <font>
                   <Font size="23.0" />
                </font>
             </Label>
-            <Label layoutX="87.0" layoutY="311.0" text="Contraseña" textFill="#000000a6">
+            <Label layoutX="91.0" layoutY="424.0" text="Contraseña" textFill="#000000a6">
                <font>
                   <Font size="23.0" />
                </font>
             </Label>
-            <Button fx:id="ButtonGoToLogin" layoutX="92.0" layoutY="423.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="389.0" text="INICIAR SESION">
+            <Button fx:id="ButtonGoToLogin" layoutX="96.0" layoutY="536.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="389.0" text="INICIAR SESION">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <TextField fx:id="txtUsername" layoutX="87.0" layoutY="229.0" prefHeight="50.0" prefWidth="389.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #777777; -fx-border-radius: 10; -fx-padding: 15;">
+            <TextField fx:id="txtUsername" layoutX="91.0" layoutY="342.0" prefHeight="50.0" prefWidth="389.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #777777; -fx-border-radius: 10; -fx-padding: 15;">
                <font>
                   <Font name="Leelawadee UI Semilight" size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="224.0" layoutY="112.0" prefHeight="38.0" prefWidth="119.0" text="SIGN UP" textAlignment="CENTER">
+            <Label layoutX="223.0" layoutY="240.0" prefHeight="38.0" prefWidth="119.0" text="SIGN UP" textAlignment="CENTER">
                <font>
                   <Font name="Ebrima" size="30.0" />
                </font>
             </Label>
-            <Label fx:id="emailLabelNoVisible1" layoutX="177.0" layoutY="194.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
+            <Label fx:id="emailLabelNoVisible1" layoutX="181.0" layoutY="307.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
                <font>
                   <Font name="Leelawadee UI Semilight" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="emailLabelNoVisible11" layoutX="214.0" layoutY="311.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
+            <Label fx:id="emailLabelNoVisible11" layoutX="218.0" layoutY="424.0" prefHeight="30.0" prefWidth="46.0" text="*" textFill="#e63c42">
                <font>
                   <Font name="Leelawadee UI Semilight" size="20.0" />
                </font>
             </Label>
-            <Line id="LineActivity" endX="423.0" endY="0.5000076293945312" layoutX="146.0" layoutY="67.0" startX="-148.0" startY="0.5" stroke="#5e5e5e" strokeLineCap="ROUND" />
-            <Label layoutX="101.0" layoutY="509.0" prefHeight="17.0" prefWidth="244.0" text="¿No tienen aun cuenta?">
+            <Line id="LineActivity" endX="423.0" endY="0.5000076293945312" layoutX="146.0" layoutY="67.0" startX="-146.0" startY="0.5" stroke="#5e5e5e" strokeLineCap="ROUND" />
+            <Label layoutX="105.0" layoutY="622.0" prefHeight="17.0" prefWidth="244.0" text="¿No tienen aun cuenta?">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button fx:id="buttonRegister" layoutX="300.0" layoutY="500.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="164.0" text="Regístrese">
+            <Button fx:id="buttonRegister" layoutX="303.0" layoutY="609.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="164.0" text="Regístrese">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <ImageView fitHeight="233.0" fitWidth="195.0" layoutX="187.0" layoutY="-60.0">
+            <ImageView fitHeight="233.0" fitWidth="195.0" layoutX="190.0" layoutY="-66.0">
                <image>
                   <Image url="@../images/LogoActivify.png" />
                </image>
             </ImageView>
-            <PasswordField fx:id="txtPassword" layoutX="87.0" layoutY="348.0" prefHeight="50.0" prefWidth="389.0" />
+            <PasswordField fx:id="txtPassword" layoutX="91.0" layoutY="461.0" prefHeight="50.0" prefWidth="389.0" />
+            <Label layoutX="154.0" layoutY="78.0" prefHeight="89.0" prefWidth="257.0" text="Bienvenido de nuevo" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="101.0" layoutY="122.0" prefHeight="89.0" prefWidth="373.0" text="Haz un seguimiento de tu progreso y alcanza tus objetivos." textAlignment="CENTER" textFill="#d3d3d3">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+            </Label>
+            <Line id="LineActivity" endX="423.0" endY="0.5000076293945312" layoutX="145.0" layoutY="210.0" startX="-145.0" startY="0.5" stroke="#5e5e5e" strokeLineCap="ROUND" />
          </children>
       </Pane>
    </children>
