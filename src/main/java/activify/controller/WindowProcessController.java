@@ -10,12 +10,14 @@ import activify.util.SessionFactoryUtil;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -66,13 +68,16 @@ public class WindowProcessController {
             // Obtener el ID del usuario autenticado
             int userId = userService.getCurrentUserId();
 
+            // Limpiar el contenedor antes de cargar nuevas actividades
+            progresoContainer.getChildren().clear();
+
             // Obtener todas las actividades del usuario
             List<Activity> activities = activityService.getActivitiesByUserId(userId);
 
             if (activities != null) {
                 for (Activity activity : activities) {
                     // Crear y agregar un nuevo VBox con los detalles de la actividad
-                    VBox activityBox = createActivityBox(activity);
+                    HBox activityBox = createActivityBox(activity);
                     progresoContainer.getChildren().add(activityBox);
                 }
             }
@@ -82,62 +87,58 @@ public class WindowProcessController {
         }
     }
 
-    private VBox createActivityBox(Activity activity) {
-        VBox activityBox = new VBox();
+
+    private HBox createActivityBox(Activity activity) {
+        HBox activityBox = new HBox();
         activityBox.setStyle("-fx-padding: 10; -fx-border-style: solid inside; -fx-border-width: 2; -fx-border-insets: 5; -fx-border-radius: 5; -fx-border-color: grey;");
+        activityBox.setSpacing(10);
 
         try {
             // Cargar la imagen desde src/main/resources/activify/view/images/user_icon.png
             InputStream imageStream = getClass().getResourceAsStream("/activify/view/images/user_icon.png");
-            if (imageStream != null) {
-                Image image = new Image(imageStream);
-                ImageView activityImageView = new ImageView(image);
-                activityImageView.setFitWidth(50);
-                activityImageView.setFitHeight(50);
+            Image image = new Image(imageStream);
+            ImageView activityImageView = new ImageView(image);
+            activityImageView.setFitWidth(100);
+            activityImageView.setFitHeight(100);
 
-                // Configurar el nombre de usuario con tamaño de letra 18px
-                Label usernameLabel = new Label(activity.getUser().getName());
-                usernameLabel.setStyle("-fx-font-size: 18px;");
+            // Crear un VBox para la imagen
+            VBox imageBox = new VBox(activityImageView);
+            imageBox.setStyle("-fx-alignment: center;");
 
-                // Configurar la fecha en color gris
-                Label dateLabel = new Label(activity.getDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-                dateLabel.setStyle("-fx-text-fill: grey;");
+            // Configurar los elementos de texto con los datos de la actividad usando Labels
+            Label usernameLabel = new Label(activity.getUser().getName());
+            usernameLabel.setStyle("-fx-font-size: 18px;");
 
-                // Configurar el título con tamaño de letra 22px
-                Label titleLabel = new Label(activity.getTitle());
-                titleLabel.setStyle("-fx-font-size: 22px;");
+            Label dateLabel = new Label(activity.getDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            dateLabel.setStyle("-fx-text-fill: gray;");
 
-                // Configurar los textos y datos de distancia, desnivel positivo y tiempo
-                Label distanceTextLabel = new Label("Distancia");
-                Label elevationTextLabel = new Label("Desnivel Positivo");
-                Label durationTextLabel = new Label("Tiempo");
+            Label titleLabel = new Label(activity.getTitle());
+            titleLabel.setStyle("-fx-font-size: 22px;");
 
-                Label distanceValueLabel = new Label(String.format("%.2f km", activity.getDistance()));
-                Label elevationValueLabel = new Label(activity.getElevation() + " m");
-                Label durationValueLabel = new Label(activity.getDuration().toString());
+            Label distanceLabel = new Label("Distancia: " + String.format("%.2f km", activity.getDistance()));
+            Label elevationLabel = new Label("Desnivel Positivo:  " + activity.getElevation() + " m");
+            Label durationLabel = new Label("Tiempo: " + activity.getDuration().toString());
 
-                // Configurar un HBox para contener los textos y valores en una fila
-                HBox detailsHBox = new HBox(10);
-                detailsHBox.getChildren().addAll(
-                        new VBox(distanceTextLabel, distanceValueLabel),
-                        new VBox(elevationTextLabel, elevationValueLabel),
-                        new VBox(durationTextLabel, durationValueLabel)
-                );
+            HBox detailsBox = new HBox(10, distanceLabel, new Label("|"), elevationLabel, new Label("|"), durationLabel);
 
-                // Configurar un VBox para contener todos los elementos de texto a la derecha de la imagen
-                VBox textVBox = new VBox(5);
-                textVBox.getChildren().addAll(usernameLabel, dateLabel, titleLabel, detailsHBox);
+            // Crear los botones de editar y borrar
+            Button editButton = new Button("Editar");
+            editButton.setStyle("-fx-background-color: #fc5200; -fx-text-fill: white;");
+            editButton.setOnAction(e -> handleEditActivity(activity));
 
-                // Configurar un HBox para contener la imagen y el VBox de textos
-                HBox mainHBox = new HBox(10);
-                mainHBox.getChildren().addAll(activityImageView, textVBox);
+            Button deleteButton = new Button("Borrar");
+            deleteButton.setStyle("-fx-background-color: #007fc6; -fx-text-fill: white;");
+            deleteButton.setOnAction(e -> handleDeleteActivity(activity));
 
-                // Agregar el HBox principal al VBox de la actividad
-                activityBox.getChildren().add(mainHBox);
-            } else {
-                // Manejar el caso donde imageStream es null (recurso no encontrado)
-                showAlert(Alert.AlertType.ERROR, "Error al cargar actividad", "No se encontró la imagen del usuario.");
-            }
+            HBox buttonBox = new HBox(10, editButton, deleteButton);
+
+            // Crear un VBox para el contenido de la actividad
+            VBox contentBox = new VBox(5, usernameLabel, dateLabel, titleLabel, detailsBox, new Label(""), buttonBox);
+            contentBox.setStyle("-fx-padding: 0 10 0 10;");
+
+            // Agregar los VBoxs al HBox principal
+            activityBox.getChildren().addAll(imageBox, contentBox);
+
         } catch (Exception e) {
             e.printStackTrace();
             showAlert(Alert.AlertType.ERROR, "Error al cargar actividad", "Ocurrió un error al cargar los detalles de la actividad.");
@@ -146,6 +147,42 @@ public class WindowProcessController {
         return activityBox;
     }
 
+
+    private void handleDeleteActivity(Activity activity) {
+        try {
+            activityService.deleteActivity(activity.getId());
+            showAlert(Alert.AlertType.INFORMATION, "Actividad borrada", "La actividad se borró correctamente.");
+            loadActivities();
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Error al borrar la actividad", "Ocurrió un error al intentar borrar la actividad.");
+        }
+    }
+
+    private void handleEditActivity(Activity activity) {
+        try {
+            // Cargar el archivo FXML de edición
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/activify/view/fxml/EditActivity.fxml"));
+            Parent root = loader.load();
+
+            // Obtener el controlador de la ventana de edición
+            EditActivityController controller = loader.getController();
+            controller.setActivity(activity);
+            controller.setActivityService(activityService);
+
+            // Configurar la escena y la ventana
+            Stage stage = new Stage();
+            stage.setTitle("Editar Actividad");
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+            // Recargar las actividades después de cerrar la ventana de edición
+            loadActivities();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Error al cargar la ventana de edición", "Ocurrió un error al intentar cargar la ventana de edición.");
+        }
+    }
 
     private void handleButtonActivities() {
         try {

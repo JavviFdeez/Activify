@@ -1,6 +1,7 @@
 package activify.repo;
 
 import activify.model.Activity;
+import activify.util.SessionFactoryUtil;
 import org.hibernate.*;
 
 import java.util.List;
@@ -70,17 +71,25 @@ public class ActivityRepository {
         }
     }
 
-    public void deleteActivity(long id) {
-        try (Session session = sessionFactory.openSession()) {
-            Transaction transaction = session.beginTransaction();
-            Activity activity = session.get(Activity.class, id);
-            if (activity != null) {
-                session.delete(activity);
-            }
-            transaction.commit();
+    public void deleteActivity(int id) {
+        Session session = sessionFactory.openSession();
+
+        try {
+            Transaction tx = session.beginTransaction();
+
+            // Operaciones con la sesión (cargar, modificar, eliminar entidades)
+            Activity activity = session.load(Activity.class, id);
+            session.delete(activity);
+
+            tx.commit();
         } catch (Exception e) {
+            if (session.getTransaction().isActive()) {
+                session.getTransaction().rollback();
+            }
             e.printStackTrace();
             throw new RuntimeException("Error al eliminar la actividad", e);
+        } finally {
+            session.close();
         }
     }
 }

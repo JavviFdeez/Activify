@@ -2,6 +2,8 @@ package activify.service;
 
 import activify.model.Activity;
 import activify.repo.ActivityRepository;
+
+import javax.transaction.Transactional;
 import java.util.List;
 
 public class ActivityService {
@@ -38,7 +40,8 @@ public class ActivityService {
         activityRepository.updateActivity(activity);
     }
 
-    public void deleteActivity(long id) {
+    @Transactional
+    public void deleteActivity(int id) {
         activityRepository.deleteActivity(id);
     }
 }
