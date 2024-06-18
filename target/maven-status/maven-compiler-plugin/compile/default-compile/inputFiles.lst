@@ -1,7 +1,7 @@
+C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\controller\EditActivityController.java
 C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\controller\LoginController.java
 C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\controller\WindowActivitiesController.java
 C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\repo\ActivityRepository.java
-C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\service\SomeService.java
 C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\service\UserService.java
 C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\config\EntityManagerFactoryProvider.java
 C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\controller\AddActivitiesController.java
@@ -13,5 +13,6 @@ C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\model\Activity.jav
 C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\util\HibernateUtil.java
 C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\ActivifyApp.java
 C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\controller\WindowProcessController.java
+C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\Executable.java
 C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\model\User.java
 C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\service\ActivityService.java

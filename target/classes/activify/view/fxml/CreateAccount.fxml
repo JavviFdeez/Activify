@@ -85,7 +85,7 @@
                   <Font name="Roboto Bold" size="27.0" />
                </font>
             </Label>
-            <Label layoutX="114.0" layoutY="126.0" prefHeight="89.0" prefWidth="373.0" text="Haz un seguimiento de tu progreso y alcanza tus objetivos." textAlignment="CENTER" textFill="#b5b5b5">
+            <Label layoutX="114.0" layoutY="126.0" prefHeight="89.0" prefWidth="405.0" text="Haz un seguimiento de tu progreso y alcanza tus objetivos." textAlignment="CENTER" textFill="#b5b5b5">
                <font>
                   <Font name="Roboto Bold" size="14.0" />
                </font>
