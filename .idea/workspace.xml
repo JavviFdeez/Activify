@@ -6,14 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="231c7d0b-d022-4424-a3aa-31b0ca546cfd" name="Changes" comment="Actualización proyecto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/controller/WindowProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/controller/WindowProcessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/repo/ActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/repo/ActivityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/service/ActivityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activify/service/ActivityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activify/service/SomeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/controller/WindowProcessController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/controller/WindowProcessController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/activify/view/fxml/CreateAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/view/fxml/CreateAccount.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Activify-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/activify/controller/EditActivityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/activify/controller/EditActivityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,12 +102,13 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\usuario\IdeaProjects\Activify" />
+      <recent name="C:\Users\usuario\IdeaProjects\Activify\.idea" />
       <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\resources" />
       <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\resources\META-INF" />
       <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\java\activify\config" />
-      <recent name="C:\Users\usuario\IdeaProjects\Activify\src\main\resources\activify\view\fxml" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="activify" />
       <recent name="" />
     </key>
   </component>
@@ -312,7 +309,8 @@
       <workItem from="1718617570061" duration="4493000" />
       <workItem from="1718638059807" duration="1432000" />
       <workItem from="1718639513740" duration="6384000" />
-      <workItem from="1718683110592" duration="4041000" />
+      <workItem from="1718683110592" duration="4077000" />
+      <workItem from="1718689939784" duration="734000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion de las clases User y SportActivity">
       <created>1704970908024</created>
@@ -413,7 +411,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718646176849</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Actualización proyecto">
+      <option name="closed" value="true" />
+      <created>1718687189445</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718687189445</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Actualización proyecto">
+      <option name="closed" value="true" />
+      <created>1718687199576</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1718687199576</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
